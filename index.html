@@ -3,111 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Score! Match - Official Telegram Group Web Hub</title>
+    <title>Score! Match - Official Telegram Group Knowledge Hub</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-green: #22c55e;
-            --accent-gold: #eab308;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
+            --bg-dark: #080c16;
+            --card-bg: #111827;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-gold: #f59e0b;
+            --accent-red: #ef4444;
+            --text-light: #f9fafb;
+            --text-gray: #9ca3af;
+            --border-line: #1f2937;
+            --telegram-color: #0088cc;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
             line-height: 1.6;
-            padding-bottom: 50px;
+            padding-bottom: 80px;
         }
 
-        header {
-            background: linear-gradient(135deg, #059669 0%, #0284c7 100%);
-            padding: 30px 15px;
+        /* Hero Banner */
+        .hero-banner {
+            position: relative;
+            background: linear-gradient(rgba(8, 12, 22, 0.88), rgba(8, 12, 22, 0.95)), 
+                        url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+            padding: 60px 20px 45px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border-bottom: 4px solid var(--accent-green);
         }
 
-        header h1 {
-            font-size: 2.2rem;
+        .hero-banner h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+            margin-bottom: 12px;
+        }
+
+        .hero-banner p {
+            font-size: 1.2rem;
+            color: var(--accent-green);
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        /* Telegram CTA Button */
+        .telegram-btn {
+            background: linear-gradient(135deg, #0088cc 0%, #005580 100%);
+            padding: 16px 32px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
             font-weight: 800;
+            font-size: 1.15rem;
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.5);
+            transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 8px;
         }
 
-        header p {
-            font-size: 1rem;
-            color: #e2e8f0;
-            font-weight: 500;
+        .telegram-btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 136, 204, 0.7);
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
-        /* Search Bar */
-        .search-box {
-            margin: 25px 0;
-            display: flex;
-            justify-content: center;
+        /* Dashboard Counter */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
         }
 
-        .search-box input {
-            width: 100%;
-            max-width: 500px;
-            padding: 14px 20px;
-            border-radius: 30px;
-            border: 2px solid var(--border-color);
+        .dash-card {
             background-color: var(--card-bg);
-            color: var(--text-main);
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
+            border: 1px solid var(--border-line);
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
         }
 
-        .search-box input:focus {
+        .dash-card h4 {
+            font-size: 2rem;
+            color: var(--accent-green);
+            font-weight: 900;
+        }
+
+        .dash-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Search Container */
+        .search-container {
+            margin: 25px 0 35px;
+            text-align: center;
+        }
+
+        .search-container input {
+            width: 100%;
+            max-width: 700px;
+            padding: 18px 28px;
+            border-radius: 40px;
+            border: 2px solid var(--border-line);
+            background-color: var(--card-bg);
+            color: white;
+            font-size: 1.05rem;
+            outline: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: border-color 0.3s;
+        }
+
+        .search-container input:focus {
             border-color: var(--accent-green);
-            box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
         }
 
         /* Navigation Tabs */
-        .nav-tabs {
+        .tabs-wrapper {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 25px;
+            gap: 12px;
+            margin-bottom: 35px;
             flex-wrap: wrap;
         }
 
         .tab-btn {
             background-color: var(--card-bg);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 10px 22px;
-            border-radius: 20px;
+            color: var(--text-light);
+            border: 1px solid var(--border-line);
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.95rem;
             cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s;
+            transition: all 0.25s ease;
+            text-transform: uppercase;
         }
 
         .tab-btn.active, .tab-btn:hover {
             background-color: var(--accent-green);
             color: #000;
             border-color: var(--accent-green);
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
         }
 
-        /* Content Sections */
+        /* Content Display */
         .tab-content {
             display: none;
         }
@@ -116,182 +179,672 @@
             display: block;
         }
 
-        .grid-container {
+        .grid-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 25px;
         }
 
+        /* Cards Design */
         .card {
             background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 16px;
+            border: 1px solid var(--border-line);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transform: translateY(-6px);
+            border-color: var(--accent-green);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        .card-badge {
+        .card-img-holder {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-body {
+            padding: 22px;
+            flex-grow: 1;
+        }
+
+        .badge {
             display: inline-block;
-            padding: 4px 10px;
+            padding: 4px 12px;
+            border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: bold;
-            border-radius: 12px;
+            font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .badge-regular { background-color: #3b82f6; color: white; }
+        .badge-regular { background-color: var(--accent-blue); color: white; }
         .badge-super { background-color: var(--accent-gold); color: black; }
-        .badge-meta { background-color: var(--accent-green); color: black; }
+        .badge-top { background-color: var(--accent-green); color: black; }
+        .badge-gk { background-color: var(--accent-red); color: white; }
 
         .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: var(--text-main);
+            font-size: 1.6rem;
+            margin-bottom: 6px;
+            color: #ffffff;
+            font-weight: 800;
+        }
+
+        .card-meta {
+            font-size: 0.92rem;
+            color: var(--accent-green);
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
         .card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 8px;
+            font-size: 0.94rem;
+            color: var(--text-gray);
+            margin-bottom: 12px;
         }
 
-        .card-stat {
-            font-weight: 600;
-            color: var(--accent-green);
+        .detail-box {
+            background-color: rgba(0,0,0,0.35);
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 0.88rem;
+            border-left: 3px solid var(--accent-green);
         }
 
-        .tactics-box {
+        .detail-box strong {
+            color: var(--text-light);
+        }
+
+        /* Tactics Guide Box */
+        .guide-card {
             background-color: var(--card-bg);
-            border-left: 4px solid var(--accent-green);
-            padding: 20px;
-            border-radius: 0 12px 12px 0;
-            margin-bottom: 20px;
+            border-left: 6px solid var(--accent-green);
+            padding: 30px;
+            border-radius: 0 16px 16px 0;
+            margin-bottom: 30px;
+            border-top: 1px solid var(--border-line);
+            border-right: 1px solid var(--border-line);
+            border-bottom: 1px solid var(--border-line);
+        }
+
+        .guide-card h3 {
+            font-size: 1.5rem;
+            color: var(--accent-green);
+            margin-bottom: 15px;
+        }
+
+        .guide-card ul {
+            padding-left: 22px;
+            color: var(--text-gray);
+        }
+
+        .guide-card li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        /* Promo Banner */
+        .group-promo {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            border: 2px dashed var(--accent-green);
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .group-promo h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .group-promo p {
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            margin-bottom: 25px;
         }
 
         footer {
             text-align: center;
-            padding: 30px 15px 0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 40px;
+            padding: 35px 20px 0;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-line);
+            margin-top: 60px;
         }
 
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.6rem; }
-            .grid-container { grid-template-columns: 1fr; }
+        @media (max-width: 768px) {
+            .hero-banner h1 { font-size: 2rem; }
+            .grid-layout { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Score! Match Strategy Hub</h1>
-        <p>Official Telegram Group Database • Master Formations & Players</p>
+    <!-- Hero Header -->
+    <header class="hero-banner">
+        <h1>Score! Match Group Hub</h1>
+        <p>Complete Database • 39 Player Archetypes • Top 10 Formations • Official Telegram Hub</p>
+        
+        <!-- Telegram Join Button -->
+        <a href="https://t.me/ScoreMatch34" target="_blank" class="telegram-btn">
+            ✈️ JOIN TELEGRAM GROUP (@ScoreMatch34)
+        </a>
     </header>
 
     <div class="container">
-        
-        <!-- Search Input -->
-        <div class="search-box">
-            <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Search players or formations (e.g. Hammer, 3-5-2)...">
+
+        <!-- Dashboard Counters -->
+        <div class="dashboard-grid">
+            <div class="dash-card">
+                <h4>39</h4>
+                <p>Total Player Types</p>
+            </div>
+            <div class="dash-card">
+                <h4>10</h4>
+                <p>Pro Formations</p>
+            </div>
+            <div class="dash-card">
+                <h4>100%</h4>
+                <p>Verified Game Data</p>
+            </div>
+            <div class="dash-card">
+                <h4>FREE</h4>
+                <p>Captain Trades in Group</p>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search players, formations, or tactics (e.g., Hammer, Commander, 3-5-2, Corner)...">
         </div>
 
         <!-- Navigation Tabs -->
-        <div class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab('players')">⚽ Player Archetypes</button>
-            <button class="tab-btn" onclick="switchTab('formations')">📋 Top 10 Formations</button>
-            <button class="tab-btn" onclick="switchTab('tactics')">🎯 Pro Tactics & Corners</button>
+        <div class="tabs-wrapper">
+            <button class="tab-btn active" onclick="openTab('players')">⚽ All 39 Player Archetypes</button>
+            <button class="tab-btn" onclick="openTab('formations')">📋 Top 10 Formations</button>
+            <button class="tab-btn" onclick="openTab('tactics')">🎯 Pro Tactics & Secrets</button>
+            <button class="tab-btn" onclick="openTab('telegram')">🤝 Telegram Captain Hub</button>
         </div>
 
-        <!-- TAB 1: PLAYER ARCHETYPES -->
+        <!-- TAB 1: ALL 39 PLAYER ARCHETYPES -->
         <div id="players" class="tab-content active">
-            <div class="grid-container">
-                
+            <div class="grid-layout">
+
+                <!-- 1. Guard -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Regular Player</span>
-                    <h3>Commander</h3>
-                    <p><strong>Best Position:</strong> Central Midfield (CM/CDM)</p>
-                    <p><strong>Traits:</strong> Safe passer, high response, extremely strong in aerial duels.</p>
-                    <p class="card-stat">⭐ Key Stat: Height & Response</p>
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>1. Guard</h3>
+                        <div class="card-meta">Best Role: Center Back (CB) / Defensive Midfield (CDM)</div>
+                        <p><strong>Overview:</strong> The safest passer in Score! Match. Plays instant 1-touch conservative passes without losing ball possession.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> Zero ball loss, disciplined marking.<br>
+                            <strong>Cons:</strong> Lacks high sprint speed.<br>
+                            <strong>Tendency:</strong> 100% Safe Passing.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 2. Engine -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Regular Player</span>
-                    <h3>Hammer</h3>
-                    <p><strong>Best Position:</strong> Striker (ST) or Central Midfield (CM)</p>
-                    <p><strong>Traits:</strong> Maximum shoot power and aerial dominance. Doesn't lose ball easily.</p>
-                    <p class="card-stat">⭐ Key Stat: Strength & Power</p>
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>2. Engine</h3>
+                        <div class="card-meta">Best Role: Fullback (LB/RB) / Central Midfield (CM)</div>
+                        <p><strong>Overview:</strong> High-stamina box-to-box engine. Balanced stats across running speed, passing, and tackling.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> Excellent pitch coverage, versatile.<br>
+                            <strong>Cons:</strong> Lacks max speed or max height.<br>
+                            <strong>Tendency:</strong> Balanced runner & passer.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 3. Speedster -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Regular Player</span>
-                    <h3>Speedster</h3>
-                    <p><strong>Best Position:</strong> Wing/Forward (ST/LW/RW)</p>
-                    <p><strong>Traits:</strong> Extreme speed. Dribbles heavily and often gets tackled if not fed early.</p>
-                    <p class="card-stat">⭐ Key Stat: Pace / Speed</p>
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>3. Speedster</h3>
+                        <div class="card-meta">Best Role: Striker (ST) / Forward</div>
+                        <p><strong>Overview:</strong> Pure speed explosion. Blasts past defenders on deep through balls.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> Incredible top sprint speed.<br>
+                            <strong>Cons:</strong> Refuses to pass, gets tackled if blocked.<br>
+                            <strong>Tendency:</strong> Solo Dribbler & Shooter.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 4. Producer -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Regular Player</span>
-                    <h3>Prowler</h3>
-                    <p><strong>Best Position:</strong> CAM or Central Striker</p>
-                    <p><strong>Traits:</strong> Highest response in the game. Reacts instantly to loose balls and crosses.</p>
-                    <p class="card-stat">⭐ Key Stat: Response & Finishing</p>
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>4. Producer</h3>
+                        <div class="card-meta">Best Role: Wing Back (LM/RM/LB/RB)</div>
+                        <p><strong>Overview:</strong> Master crosser with high curve skill. Serves pinpoint long balls directly to Strikers.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> High passing skill, curved crosses.<br>
+                            <strong>Cons:</strong> Can hold ball too long occasionally.<br>
+                            <strong>Tendency:</strong> Creative Playmaker.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 5. Hammer -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Regular Player</span>
-                    <h3>Producer</h3>
-                    <p><strong>Best Position:</strong> Wing Back or Wing</p>
-                    <p><strong>Traits:</strong> Excellent crosser with curve. Safe passer in buildup play.</p>
-                    <p class="card-stat">⭐ Key Stat: Passing & Skill</p>
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-top">Top Scorer</span>
+                        <h3>5. Hammer</h3>
+                        <div class="card-meta">Best Role: Striker (ST) / Central Midfield (CM)</div>
+                        <p><strong>Overview:</strong> Unstoppable aerial header machine. Max power shots and towering strength.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> Near 100% corner scoring rate, long-range power.<br>
+                            <strong>Cons:</strong> Very slow sprint speed.<br>
+                            <strong>Tendency:</strong> One-touch Finisher.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 6. Commander -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Regular Player</span>
-                    <h3>Guard</h3>
-                    <p><strong>Best Position:</strong> CB / CDM</p>
-                    <p><strong>Traits:</strong> One-touch safe passer. Keeps possession and solid defensive positioning.</p>
-                    <p class="card-stat">⭐ Key Stat: Safe Passing & Defense</p>
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-top">Top Choice</span>
+                        <h3>6. Commander</h3>
+                        <div class="card-meta">Best Role: Central Midfield (CM / CDM / CB)</div>
+                        <p><strong>Overview:</strong> Midfield general. Dominates response, height, and safe 1-touch passing.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> Dominates aerial duels, instant passing reaction.<br>
+                            <strong>Cons:</strong> Slow speed.<br>
+                            <strong>Tendency:</strong> 1-Touch Midfield Wall.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 7. Protector -->
                 <div class="card searchable">
-                    <span class="card-badge badge-super">Super Player</span>
-                    <h3>Voyager</h3>
-                    <p><strong>Best Position:</strong> CB / RB / LB</p>
-                    <p><strong>Traits:</strong> Guard + Speedster combo. Fast, strong, tackles cleanly and passes safely.</p>
-                    <p class="card-stat">⭐ Key Stat: Pace & Strength</p>
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1560272564-66952074f494?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>7. Protector</h3>
+                        <div class="card-meta">Best Role: Fullback / Center Back / Wing Back</div>
+                        <p><strong>Overview:</strong> Taller and faster Guard variant. Safe passer who also swings deep wing crosses.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> Solid defensive positioning, reliable passing.<br>
+                            <strong>Cons:</strong> Moderate strength against Hammers.<br>
+                            <strong>Tendency:</strong> Defensive Crosser.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 8. Infiltrator -->
                 <div class="card searchable">
-                    <span class="card-badge badge-super">Super Player</span>
-                    <h3>Jet</h3>
-                    <p><strong>Best Position:</strong> Striker (ST)</p>
-                    <p><strong>Traits:</strong> Upgraded Speedster. Faster response, smarter runs, better finishing capability.</p>
-                    <p class="card-stat">⭐ Key Stat: Speed & Response</p>
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>8. Infiltrator</h3>
+                        <div class="card-meta">Best Role: Wing Forward (LW/RW)</div>
+                        <p><strong>Overview:</strong> Speedy agile runner who cuts inside defender lines to shoot.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> High pace and agility.<br>
+                            <strong>Cons:</strong> Dribbles into heavy defense traps.<br>
+                            <strong>Tendency:</strong> Dribbling Runner.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 9. Intruder -->
                 <div class="card searchable">
-                    <span class="card-badge badge-super">Super Player</span>
-                    <h3>Poacher</h3>
-                    <p><strong>Best Position:</strong> Striker (ST)</p>
-                    <p><strong>Traits:</strong> Upgraded Prowler. Faster speed combined with insane response and precision.</p>
-                    <p class="card-stat">⭐ Key Stat: Lethal Finishing</p>
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>9. Intruder</h3>
+                        <div class="card-meta">Best Role: Center Back (CB) / Winger / Forward</div>
+                        <p><strong>Overview:</strong> Smarter pace player. Uses speed while still willing to pass ball when pressed.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> High speed, tracks back defensively at CB.<br>
+                            <strong>Cons:</strong> Low strength.<br>
+                            <strong>Tendency:</strong> Fast Smart Runner.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 10. Prowler -->
                 <div class="card searchable">
-                    <span class="card-badge badge-super">Super Player</span>
-                    <h3>Major</h3>
-                    <p><strong>Best Position:</strong> CDM / CM / CB</p>
-                    <p><strong>Traits:</strong> Upgraded Commander. Greater shot power, height, and physical presence.</p>
-                    <p class="card-stat">⭐ Key Stat: Dominant Midfield</p>
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>10. Prowler</h3>
+                        <div class="card-meta">Best Role: Central Attacking Midfield (CAM) / Striker</div>
+                        <p><strong>Overview:</strong> Insane reaction response time. pounces on loose balls and fires quick finish.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> Quickest shot release in box.<br>
+                            <strong>Cons:</strong> Moderate height.<br>
+                            <strong>Tendency:</strong> Opportunistic Finisher.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Architect -->
+                <div class="card searchable">
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>11. Architect</h3>
+                        <div class="card-meta">Best Role: Attacking Midfield (CAM)</div>
+                        <p><strong>Overview:</strong> High skill passer capable of bending passes around enemy backlines.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> Extreme curve precision.<br>
+                            <strong>Cons:</strong> Weak physical strength.<br>
+                            <strong>Tendency:</strong> Creative Threader.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Menace -->
+                <div class="card searchable">
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>12. Menace</h3>
+                        <div class="card-meta">Best Role: Striker (ST)</div>
+                        <p><strong>Overview:</strong> Complete striker archetype. Possesses decent height, speed, shot power, and skill.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> All-around forward skill set.<br>
+                            <strong>Cons:</strong> Outperformed in specialized roles.<br>
+                            <strong>Tendency:</strong> Versatile Attacker.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. Explorer -->
+                <div class="card searchable">
+                    <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1560272564-66952074f494?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Regular Player</span>
+                        <h3>13. Explorer</h3>
+                        <div class="card-meta">Best Role: Center Back (CB) / Fullback</div>
+                        <p><strong>Overview:</strong> Speedy defender. Essential for chasing down opponent Speedsters and Jets.</p>
+                        <div class="detail-box">
+                            <strong>Pros:</strong> High recovery pace in defense.<br>
+                            <strong>Cons:</strong> Can dribble out of defense line.<br>
+                            <strong>Tendency:</strong> Fast Tackler.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Keeper -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-gk">Goalkeeper</span>
+                        <h3>14. GK-Keeper</h3>
+                        <div class="card-meta">Role: Traditional Goalkeeper</div>
+                        <p>Standard balanced goalkeeper. Stays close to goal line to save shots.</p>
+                    </div>
+                </div>
+
+                <!-- 15. Stopper -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-gk">Goalkeeper</span>
+                        <h3>15. GK-Stopper</h3>
+                        <div class="card-meta">Role: Shot Stopping Goalkeeper</div>
+                        <p>Best long-range shot stopper in game. Uses tall stature to save headers and power strikes.</p>
+                    </div>
+                </div>
+
+                <!-- 16. Sweeper -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-gk">Goalkeeper</span>
+                        <h3>16. GK-Sweeper</h3>
+                        <div class="card-meta">Role: Sweeper Keeper</div>
+                        <p>Rushes outside penalty box to clear long through balls before opponent attackers reach them.</p>
+                    </div>
+                </div>
+
+                <!-- 17. Voyager (Patrizio) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Patrizio)</span>
+                        <h3>17. Voyager</h3>
+                        <div class="card-meta">Best Role: Center Back (CB) / Fullback</div>
+                        <p>Upgraded Explorer/Guard hybrid. Possesses high speed, high strength, and safe 1-touch passing.</p>
+                    </div>
+                </div>
+
+                <!-- 18. Bulldozer (Matsumoto) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Matsumoto)</span>
+                        <h3>18. Bulldozer</h3>
+                        <div class="card-meta">Best Role: Striker (ST) / Center Back</div>
+                        <p>Upgraded Hammer. Pure monster height, strength, max shot power, plus power-dribbling capability.</p>
+                    </div>
+                </div>
+
+                <!-- 19. Jet (Sabré) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Sabré)</span>
+                        <h3>19. Jet</h3>
+                        <div class="card-meta">Best Role: Central Striker (ST)</div>
+                        <p>Upgraded Speedster. Maximum pace paired with superior response and clinical finishing.</p>
+                    </div>
+                </div>
+
+                <!-- 20. Poacher (Sandberg) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Sandberg)</span>
+                        <h3>20. Poacher</h3>
+                        <div class="card-meta">Best Role: Striker (ST) / Forward</div>
+                        <p>Upgraded Prowler. Explosive acceleration and deadly target precision inside opponent penalty area.</p>
+                    </div>
+                </div>
+
+                <!-- 21. Major (Wolfgang) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Wolfgang)</span>
+                        <h3>21. Major</h3>
+                        <div class="card-meta">Best Role: Defensive Midfield (CDM / CM)</div>
+                        <p>Upgraded Commander. Giant height, maximum shot power, and total aerial rule over midfield.</p>
+                    </div>
+                </div>
+
+                <!-- 22. Marksman (Faustinho) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Faustinho)</span>
+                        <h3>22. Marksman</h3>
+                        <div class="card-meta">Best Role: Wing Back (LM/RM) / Winger</div>
+                        <p>Upgraded Producer. Superior curved passing and long-range curved shots on target.</p>
+                    </div>
+                </div>
+
+                <!-- 23. Wizard (Zimmer) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Zimmer)</span>
+                        <h3>23. Wizard</h3>
+                        <div class="card-meta">Best Role: Attacking Midfield (CAM / LM)</div>
+                        <p>Upgraded Architect. Elite playmaker AI that picks apart defender lines with through balls.</p>
+                    </div>
+                </div>
+
+                <!-- 24. Raider (Keene) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Keene)</span>
+                        <h3>24. Raider</h3>
+                        <div class="card-meta">Best Role: Center Back (CB)</div>
+                        <p>Upgraded Intruder. High speed, high response, and aggressive ball recovery in defense.</p>
+                    </div>
+                </div>
+
+                <!-- 25. Invader (Bertini) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Bertini)</span>
+                        <h3>25. Invader</h3>
+                        <div class="card-meta">Best Role: Winger / Fullback</div>
+                        <p>Upgraded Infiltrator. Blazing speed combined with high response and dribble capability.</p>
+                    </div>
+                </div>
+
+                <!-- 26. Hero (Jones) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Jones)</span>
+                        <h3>26. Hero</h3>
+                        <div class="card-meta">Best Role: Central Midfield (CM / CAM)</div>
+                        <p>Upgraded Engine. Complete pitch controller with reliable passing, stamina, and long shots.</p>
+                    </div>
+                </div>
+
+                <!-- 27. Warrior (Sierra) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Sierra)</span>
+                        <h3>27. Warrior</h3>
+                        <div class="card-meta">Best Role: Defensive Midfield (CDM)</div>
+                        <p>Upgraded Protector. Powerful defensive beast with safe passing and high tackling.</p>
+                    </div>
+                </div>
+
+                <!-- 28. Pickpocket (Simon) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Simon)</span>
+                        <h3>28. Pickpocket</h3>
+                        <div class="card-meta">Best Role: Fullback / Midfield Ball Winner</div>
+                        <p>Highest tackle success rate. Dispossesses opponents from behind effortlessly.</p>
+                    </div>
+                </div>
+
+                <!-- 29. Judge (Johnson) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Johnson)</span>
+                        <h3>29. Judge</h3>
+                        <div class="card-meta">Best Role: Central Midfield (CM)</div>
+                        <p>High response all-around midfielder with safe distribution and long shooting skill.</p>
+                    </div>
+                </div>
+
+                <!-- 30. Juggernaut (Cook) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Cook)</span>
+                        <h3>30. Juggernaut</h3>
+                        <div class="card-meta">Best Role: Striker / Center Back</div>
+                        <p>Heavy physical tank player. Drives through tackles with sheer body strength.</p>
+                    </div>
+                </div>
+
+                <!-- 31. Lightning (Abubakar) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Abubakar)</span>
+                        <h3>31. Lightning</h3>
+                        <div class="card-meta">Best Role: Forward / Winger</div>
+                        <p>Electric acceleration variant. Reaches peak sprint speed instantly on through passes.</p>
+                    </div>
+                </div>
+
+                <!-- 32. Thunder (Junior) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Junior)</span>
+                        <h3>32. Thunder</h3>
+                        <div class="card-meta">Best Role: Striker (ST)</div>
+                        <p>Heavy aerial forward with active running trait. Attacks crosses in motion.</p>
+                    </div>
+                </div>
+
+                <!-- 33. Composer (Zivkovic) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Zivkovic)</span>
+                        <h3>33. Composer</h3>
+                        <div class="card-meta">Best Role: Wing Back (LM/RM)</div>
+                        <p>Ultimate long passer. Curves crosses across entire field directly onto Striker heads.</p>
+                    </div>
+                </div>
+
+                <!-- 34. Hitman (Sinclair) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Sinclair)</span>
+                        <h3>34. Hitman</h3>
+                        <div class="card-meta">Best Role: Forward / CAM</div>
+                        <p>Surgical positioning AI. Executes smart off-the-ball runs into goalscoring spaces.</p>
+                    </div>
+                </div>
+
+                <!-- 35. Gatecrasher (Hakan) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Hakan)</span>
+                        <h3>35. Gatecrasher</h3>
+                        <div class="card-meta">Best Role: Forward Winger</div>
+                        <p>High speed runner with aggressive forward movement inside opponent channels.</p>
+                    </div>
+                </div>
+
+                <!-- 36. Cannon (Benitez) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Benitez)</span>
+                        <h3>36. Cannon</h3>
+                        <div class="card-meta">Best Role: Striker / CAM</div>
+                        <p>Lethal long-range shooter. Scores outside penalty box goals with maximum shot power.</p>
+                    </div>
+                </div>
+
+                <!-- 37. Villain (Fernandez) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Fernandez)</span>
+                        <h3>37. Villain</h3>
+                        <div class="card-meta">Best Role: Universal Attacker</div>
+                        <p>Agile forward with balanced strength, dribbling skill, and curve shooting capability.</p>
+                    </div>
+                </div>
+
+                <!-- 38. Maestro (Lee) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Lee)</span>
+                        <h3>38. Maestro</h3>
+                        <div class="card-meta">Best Role: Midfield Controller</div>
+                        <p>Safe passing playmaker with high skill. Controls possession speed in central midfield.</p>
+                    </div>
+                </div>
+
+                <!-- 39. Finisher (Traore) -->
+                <div class="card searchable">
+                    <div class="card-body">
+                        <span class="badge badge-super">Super Player (Traore)</span>
+                        <h3>39. Finisher</h3>
+                        <div class="card-meta">Best Role: Wide Crosser / Winger</div>
+                        <p>Delivers sharp low-driven and high-floated crosses from wing areas into penalty box.</p>
+                    </div>
                 </div>
 
             </div>
@@ -299,143 +852,210 @@
 
         <!-- TAB 2: TOP 10 FORMATIONS -->
         <div id="formations" class="tab-content">
-            <div class="grid-container">
+            <div class="grid-layout">
 
+                <!-- 1. 3-5-2 -->
                 <div class="card searchable">
-                    <span class="card-badge badge-meta">Meta #1</span>
-                    <h3>3-5-2 Formation</h3>
-                    <p><strong>Playstyle:</strong> Dominant Possession & Cross-Header Combo</p>
-                    <p><strong>Key Positions:</strong> Wide Producers/Prowlers, Commanders in CM, Hammers upfront.</p>
-                    <p class="card-stat">🏆 Best for Arena 10 & Infinity Arena</p>
+                    <div class="card-body">
+                        <span class="badge badge-top">Top Recommendation</span>
+                        <h3>1. 3-5-2 Formation</h3>
+                        <div class="card-meta">Strategy: Aerial Supremacy & Midfield Domination</div>
+                        <p><strong>Setup:</strong> 3 CBs (Voyager/Raider/Guard), 2 Wingbacks (Producer/Composer), 3 Midfielders (Commander/Major/Hammer), 2 Strikers (Bulldozer/Poacher).</p>
+                        <div class="detail-box">
+                            <strong>Tactics:</strong> Control possession in midfield, feed wings, and cross to target strikers. Unbeatable aerial corner win rate.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 2. 5-3-2 -->
                 <div class="card searchable">
-                    <span class="card-badge badge-meta">Meta #2</span>
-                    <h3>5-3-2 Formation</h3>
-                    <p><strong>Playstyle:</strong> Defensive Counter Attack</p>
-                    <p><strong>Key Positions:</strong> 3 Solid CBs (Guard/Voyager), Fast Wingbacks, Lethal Strikers.</p>
-                    <p class="card-stat">🏆 Unbeatable Counter-Defense</p>
+                    <div class="card-body">
+                        <span class="badge badge-top">Pro Choice</span>
+                        <h3>2. 5-3-2 Formation</h3>
+                        <div class="card-meta">Strategy: Defensive Fortress & Counter-Attack</div>
+                        <p><strong>Setup:</strong> 5 Defenders providing full pitch width cover, 3 One-Touch Central Midfielders, 2 Pace Strikers (Jet/Lightning).</p>
+                        <div class="detail-box">
+                            <strong>Tactics:</strong> Absorbs opponent pressure then launches quick long through balls to fast strikers.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 3. 4-2-1-3 -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Top Tier</span>
-                    <h3>4-2-1-3 Formation</h3>
-                    <p><strong>Playstyle:</strong> High Attacking Pressure</p>
-                    <p><strong>Key Positions:</strong> CAM (Prowler/Poacher) feeding fast Wingers (Jet/Speedster).</p>
-                    <p class="card-stat">🏆 High Scoring Setup</p>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Attacking Setup</span>
+                        <h3>3. 4-2-1-3 Formation</h3>
+                        <div class="card-meta">Strategy: High Attacking Overload</div>
+                        <p><strong>Setup:</strong> 4 Backline, 2 Anchor CDMs (Commander/Guard), 1 CAM (Prowler), 2 Wingers + 1 Central Target Striker.</p>
+                        <div class="detail-box">
+                            <strong>Tactics:</strong> Creates 4-man attacking waves inside opponent box during fast transitions.
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 4. 4-3-3 -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Top Tier</span>
-                    <h3>4-3-3 Formation</h3>
-                    <p><strong>Playstyle:</strong> Traditional Wide Attack</p>
-                    <p><strong>Key Positions:</strong> High-skill Wingers crossing to a heavy Target Striker (Hammer).</p>
-                    <p class="card-stat">🏆 Classic Balanced Play</p>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Classic Setup</span>
+                        <h3>4. 4-3-3 Formation</h3>
+                        <div class="card-meta">Strategy: Balanced Wide Play</div>
+                        <p><strong>Setup:</strong> 4 Defenders, 3 Passing Midfielders, 2 Fast Wingers crossing to central Hammer/Bulldozer.</p>
+                    </div>
                 </div>
 
+                <!-- 5. 4-4-2 -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Balanced</span>
-                    <h3>4-4-2 Formation</h3>
-                    <p><strong>Playstyle:</strong> Standard Solid Structure</p>
-                    <p><strong>Key Positions:</strong> Safe passers in CM, crossers on LM/RM, Twin Strikers.</p>
-                    <p class="card-stat">🏆 Reliable Overall Performance</p>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Standard Setup</span>
+                        <h3>5. 4-4-2 Formation</h3>
+                        <div class="card-meta">Strategy: Balanced Two-Bank Defense</div>
+                        <p><strong>Setup:</strong> 4 Defenders, 4 Midfielders in a line, 2 Forward Strikers.</p>
+                    </div>
                 </div>
 
+                <!-- 6. 5-2-1-2 -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Defensive</span>
-                    <h3>5-2-1-2 Formation</h3>
-                    <p><strong>Playstyle:</strong> Compact Middle Defense</p>
-                    <p><strong>Key Positions:</strong> High-response CAM connecting defense directly to strikers.</p>
-                    <p class="card-stat">🏆 Neutralizes Wing Heavy Teams</p>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Defensive Setup</span>
+                        <h3>6. 5-2-1-2 Formation</h3>
+                        <div class="card-meta">Strategy: Central Blockade</div>
+                        <p><strong>Setup:</strong> 5 Defenders, 2 CDMs, 1 High Response CAM connecting ball to Twin Strikers.</p>
+                    </div>
                 </div>
 
+                <!-- 7. 3-4-3 -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Attacking</span>
-                    <h3>3-4-3 Formation</h3>
-                    <p><strong>Playstyle:</strong> Total Wing Overload</p>
-                    <p><strong>Key Positions:</strong> Fast Wingbacks and 3 active Forward strikers.</p>
-                    <p class="card-stat">🏆 Maximum Forward Option</p>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Aggressive</span>
+                        <h3>7. 3-4-3 Formation</h3>
+                        <div class="card-meta">Strategy: Total Wing Overload</div>
+                        <p><strong>Setup:</strong> 3 CBs, 4 Midfielders, 3 Attackers overloading opponent penalty box.</p>
+                    </div>
                 </div>
 
+                <!-- 8. 4-1-2-3 -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Control</span>
-                    <h3>4-1-2-3 Formation</h3>
-                    <p><strong>Playstyle:</strong> Midfield Hold & Triple Threat</p>
-                    <p><strong>Key Positions:</strong> Anchor CDM (Guard/Commander) protecting backline.</p>
-                    <p class="card-stat">🏆 Great Midfield Dominance</p>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Control</span>
+                        <h3>8. 4-1-2-3 Formation</h3>
+                        <div class="card-meta">Strategy: Single Anchor CDM System</div>
+                        <p><strong>Setup:</strong> 4 Back, 1 CDM (Commander), 2 Creative CMs, 3 Strikers.</p>
+                    </div>
                 </div>
 
+                <!-- 9. 5-4-1 -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Defensive</span>
-                    <h3>5-4-1 Formation</h3>
-                    <p><strong>Playstyle:</strong> Ultra Defensive (Park the Bus)</p>
-                    <p><strong>Key Positions:</strong> 5 defenders + 4 midfielders, solo fast Striker on break.</p>
-                    <p class="card-stat">🏆 Best for Defense Events</p>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Ultra Defensive</span>
+                        <h3>9. 5-4-1 Formation</h3>
+                        <div class="card-meta">Strategy: Park The Bus & Solo Breakout</div>
+                        <p><strong>Setup:</strong> 5 Defenders, 4 Midfielders, 1 Solo Pace Striker (Jet/Speedster).</p>
+                    </div>
                 </div>
 
+                <!-- 10. 4-1-4-1 -->
                 <div class="card searchable">
-                    <span class="card-badge badge-regular">Tactical</span>
-                    <h3>4-1-4-1 Formation</h3>
-                    <p><strong>Playstyle:</strong> Dense Midfield Block</p>
-                    <p><strong>Key Positions:</strong> Wide midfielders crossing to central Hammer/Bull.</p>
-                    <p class="card-stat">🏆 High Possession Control</p>
+                    <div class="card-body">
+                        <span class="badge badge-regular">Tactical</span>
+                        <h3>10. 4-1-4-1 Formation</h3>
+                        <div class="card-meta">Strategy: Midfield Possession Block</div>
+                        <p><strong>Setup:</strong> 4 Backline, 1 Defensive Shield CDM, 4 Midfielders, 1 Target Forward.</p>
+                    </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- TAB 3: PRO TACTICS -->
+        <!-- TAB 3: PRO TACTICS & SECRETS -->
         <div id="tactics" class="tab-content">
-            <div class="tactics-box">
-                <h3>🚩 100% Corner Kick Scoring Routine</h3>
-                <p>1. Target your <strong>Hammer</strong> or <strong>Commander</strong> placed near the far post or central box.</p>
-                <p>2. Curve the corner ball slightly outward to give maximum elevation.</p>
-                <p>3. Ensure your target player has high Strength/Height to win the header every time.</p>
+            
+            <div class="guide-card searchable">
+                <h3>🚩 100% Corner Kick Goal Formula</h3>
+                <ul>
+                    <li><strong>Target Striker:</strong> Place <strong>Hammer</strong> or <strong>Bulldozer</strong> in the far-post corner spot.</li>
+                    <li><strong>Curve Technique:</strong> Draw a high curve line extending slightly outward from corner arc.</li>
+                    <li><strong>Execution:</strong> Aim directly at Hammer's head. Due to max height and power stats, they overpower defenders every time.</li>
+                </ul>
             </div>
 
-            <div class="tactics-box">
-                <h3>🛡️ Defense Rules (How Not to Concede)</h3>
-                <p>• <strong>Never select CBs to tackle early!</strong> Pull back CDMs or Fullbacks to pressure ball carriers.</p>
-                <p>• Use <strong>Stopper or Sweeper</strong> based on your defensive line height.</p>
-                <p>• Avoid using Speedsters in central defense—always use Guards, Commanders, or Voyagers.</p>
+            <div class="guide-card searchable">
+                <h3>🛡️ How to Stop Fast Strikers (Speedsters/Jets)</h3>
+                <ul>
+                    <li><strong>Rule #1: Never pull your CBs out of position!</strong> Let the AI keep your CB line structured.</li>
+                    <li><strong>Defensive Lineup:</strong> Use fast CBs like <strong>Voyager, Raider, or Explorer</strong> in central defense.</li>
+                    <li><strong>Goalkeeper Choice:</strong> Use <strong>Stopper</strong> for shot savings or <strong>Sweeper</strong> to intercept deep through balls.</li>
+                </ul>
             </div>
+
+            <div class="guide-card searchable">
+                <h3>⚡ One-Touch Midfield Passing IQ</h3>
+                <ul>
+                    <li>Chain 1-touch passes using <strong>Commander, Guard, and Major</strong> in midfield to avoid tackles.</li>
+                    <li>Never pass to Speedsters/Infiltrators in tight crowded spaces—only pass into open green grass!</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- TAB 4: TELEGRAM CAPTAIN HUB -->
+        <div id="telegram" class="tab-content">
+            <div class="guide-card">
+                <h3>🤝 Telegram Captain Exchange Hub Guidelines</h3>
+                <ul>
+                    <li><strong>Level 10 Captain Trades:</strong> Join our official group to exchange high-level Captains (Hammer, Commander, Voyager, Bulldozer, Jet) for FREE!</li>
+                    <li><strong>Anti-Spam Community:</strong> Safe trading environment monitored by Ronaldo Bot moderation.</li>
+                    <li><strong>Group Handle:</strong> <a href="https://t.me/ScoreMatch34" target="_blank" style="color:var(--accent-green);">@ScoreMatch34</a></li>
+                </ul>
+                <div style="text-align: center; margin-top: 25px;">
+                    <a href="https://t.me/ScoreMatch34" target="_blank" class="telegram-btn">
+                        ✈️ JOIN TELEGRAM GROUP NOW
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Telegram Promo Banner Footer -->
+        <div class="group-promo">
+            <h2>🏆 Join Our Official Score! Match Telegram Community!</h2>
+            <p>Connect with thousands of active players, get daily tactic breakdowns, exchange level 10 captains, and play custom tournaments!</p>
+            <a href="https://t.me/ScoreMatch34" target="_blank" class="telegram-btn">
+                ✈️ CLICK HERE TO JOIN @ScoreMatch34
+            </a>
         </div>
 
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>© Score! Match Official Telegram Community. All rights reserved.</p>
+        <p>© Score! Match Official Telegram Group Hub • Built for Pro Gamers</p>
     </footer>
 
+    <!-- JavaScript Logic -->
     <script>
-        function switchTab(tabId) {
-            // Hide all contents
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
             });
-            // Remove active class from buttons
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            // Show selected tab
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
         }
 
-        function searchCards() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let cards = document.querySelectorAll('.searchable');
+        function filterCards() {
+            let query = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.querySelectorAll('.searchable');
 
-            cards.forEach(card => {
-                let text = card.innerText.toLowerCase();
-                if (text.includes(input)) {
-                    card.style.display = "block";
+            items.forEach(item => {
+                let text = item.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = "";
                 } else {
-                    card.style.display = "none";
+                    item.style.display = "none";
                 }
             });
         }
     </script>
 </body>
 </html>
-
