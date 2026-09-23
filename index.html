@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score! Match Strategy Database | Player Stats, Formations & Guides</title>
+    
+    <!-- Primary SEO Information -->
+    <meta name="title" content="Score! Match Strategy Database & Player Hub">
+    <meta name="description" content="The ultimate Score! Match strategy database. Explore all 33 player archetypes, complete formation guides, arena unlocking order, corner routines, and join @ScoreMatch34 Telegram group.">
+    <meta name="keywords" content="Score Match, Score Match Players, Score Match Super Players, Score Match Golden Elite, Score Match Formations, ScoreMatch34, Score Match Tips, Volleyball Strategy, Score Match Code Hub, Level 10 Captains">
+    <meta name="author" content="Score! Match Global Community">
+
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t.me/ScoreMatch34">
+    <meta property="og:title" content="Score! Match Strategy Hub & Complete Player Database">
+    <meta property="og:description" content="Master Score! Match with full player stats, 13+ formation guides, defensive blueprints, and direct community matches.">
+    <meta property="og:image" content="https://img.icons8.com/color/512/soccer-ball.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #060911;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-card-hover: rgba(255, 255, 255, 0.06);
+            --border-glow: rgba(0, 255, 204, 0.3);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --cyan: #00ffcc;
+            --cyan-dark: #00cca3;
+            --blue: #0088cc;
+            --blue-hover: #00a2ff;
+            --gold: #ffc107;
+            --silver: #e2e8f0;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+
+        /* Top Announcement Promotion Bar */
+        .top-promo-bar {
+            background: linear-gradient(90deg, #004488, var(--blue), #004488);
+            color: #fff;
+            text-align: center;
+            padding: 9px 15px;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .top-promo-bar a {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4px 14px;
+            border-radius: 20px;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.4);
+            transition: 0.3s;
+        }
+
+        .top-promo-bar a:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Header Navigation */
+        header {
+            background: rgba(6, 9, 17, 0.95);
+            backdrop-filter: blur(16px);
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 40px;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--cyan);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--cyan); }
+
+        .btn-nav-telegram {
+            background: linear-gradient(135deg, var(--blue), #005599);
+            color: #fff !important;
+            padding: 9px 22px;
+            border-radius: 30px;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-nav-telegram:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 90px 20px 60px 20px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 20%, #112238 0%, var(--bg-dark) 75%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 255, 204, 0.1);
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 820px;
+            margin: 0 auto 30px auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .btn-hero-primary {
+            background: linear-gradient(135deg, var(--cyan), var(--cyan-dark));
+            color: #000;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 255, 204, 0.3);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.5);
+        }
+
+        .btn-hero-secondary {
+            background: linear-gradient(135deg, var(--blue), #005599);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.3);
+        }
+
+        .btn-hero-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.5);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat-item h3 { font-size: 30px; color: var(--cyan); font-weight: 800; }
+        .stat-item p { font-size: 13px; color: var(--text-secondary); }
+
+        /* Controls Section */
+        .controls-wrapper {
+            max-width: 900px;
+            margin: 40px auto 40px auto;
+            padding: 0 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 26px;
+            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--cyan);
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .filter-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--cyan);
+            color: #000;
+            border-color: var(--cyan);
+            font-weight: 700;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 50px 0 25px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 14px;
+        }
+
+        /* Card Grids */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 26px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: var(--bg-card-hover);
+            border-color: var(--border-glow);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-type-bar {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            border-radius: 16px 16px 0 0;
+        }
+        .card.gk .card-type-bar { background: #38bdf8; }
+        .card.regular .card-type-bar { background: #4ade80; }
+        .card.silver .card-type-bar { background: var(--silver); }
+        .card.gold .card-type-bar { background: var(--gold); }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .card h3 { font-size: 21px; font-weight: 700; }
+
+        .badge {
+            font-size: 10px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .badge.gk { background: #0284c7; color: #fff; }
+        .badge.regular { background: #16a34a; color: #fff; }
+        .badge.silver { background: #64748b; color: #fff; }
+        .badge.gold { background: #d97706; color: #fff; }
+
+        .optimal-pos {
+            font-size: 12px;
+            color: var(--cyan);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Table Container */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th {
+            background: rgba(255,255,255,0.05);
+            color: var(--cyan);
+            padding: 14px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        /* Formations Card */
+        .formation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 26px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .formation-card:hover {
+            border-color: var(--border-glow);
+        }
+
+        .formation-card h4 {
+            font-size: 20px;
+            color: var(--cyan);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .formation-tag {
+            font-size: 11px;
+            color: #fff;
+            background: rgba(0, 255, 204, 0.15);
+            border: 1px solid var(--cyan);
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+
+        /* Non-overlapping Telegram Community Box */
+        .community-box {
+            background: linear-gradient(135deg, #091a29, #11283c, #0d2133);
+            border: 1px solid var(--cyan);
+            border-radius: 20px;
+            padding: 45px 30px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 15px 40px rgba(0, 255, 204, 0.12);
+            position: relative;
+            clear: both;
+            overflow: hidden;
+        }
+
+        .community-box h2 {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .community-box p {
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 28px auto;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .btn-community-telegram {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--blue), #005599);
+            color: #fff;
+            padding: 16px 38px;
+            border-radius: 35px;
+            font-size: 17px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(0, 136, 204, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-community-telegram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.6);
+        }
+
+        /* FAQ Accordion Item */
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-bottom: 15px;
+        }
+
+        .faq-item h4 {
+            font-size: 17px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: #03050a;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        footer a { color: var(--cyan); text-decoration: none; }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            header { padding: 12px 18px; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 15px; }
+            .hero-stats { gap: 20px; }
+            .community-box { padding: 35px 20px; }
+            .community-box h2 { font-size: 24px; }
+            .btn-community-telegram { padding: 14px 28px; font-size: 15px; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Bar for Telegram Promotion -->
+    <div class="top-promo-bar">
+        <span>📢 Join 2,000+ Score! Match Players in Our Active Telegram Group!</span>
+        <a href="https://t.me/ScoreMatch34" target="_blank">Join @ScoreMatch34</a>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+    <header>
+        <a href="#" class="brand">⚽ Score! Match Hub</a>
+        <div class="nav-links">
+            <a href="#players">Players</a>
+            <a href="#arenas">Arenas</a>
+            <a href="#formations">Formations</a>
+            <a href="#tactics">Pro Corner Guide</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://t.me/ScoreMatch34" target="_blank" class="btn-nav-telegram">
+                <span>💬</span> Telegram Group
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-badge">Official Strategy Hub & Player Database</span>
+        <h1>Master Every Match & Conquer Infinity Arena</h1>
+        <p>The most comprehensive strategy guide for Score! Match players. Access detailed stats for all 33 player archetypes, optimal high-arena formations, corner kick routines, and friendly match links.</p>
+        
+        <div class="hero-actions">
+            <a href="#players" class="btn-hero-primary">Explore Player Database</a>
+            <a href="https://t.me/ScoreMatch34" target="_blank" class="btn-hero-secondary">🚀 Join Telegram Community</a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <h3>33</h3>
+                <p>Complete Archetypes</p>
+            </div>
+            <div class="stat-item">
+                <h3>13+</h3>
+                <p>Master Formations</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Verified Game Stats</p>
+            </div>
+            <div class="stat-item">
+                <h3>Level 10</h3>
+                <p>Captain Exchange</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Controls (Search & Category Buttons) -->
+    <div class="controls-wrapper" id="players">
+        <input type="text" id="searchInput" class="search-input" onkeyup="filterDatabase()" placeholder="🔍 Search any player (e.g. Hammer, Poacher, Stopper, Voyager) or role...">
+        
+        <div class="filter-group">
+            <button class="filter-btn active" onclick="setCategory('all')">All Players (33)</button>
+            <button class="filter-btn" onclick="setCategory('gk')">Goalkeepers (3)</button>
+            <button class="filter-btn" onclick="setCategory('regular')">Regulars (13)</button>
+            <button class="filter-btn" onclick="setCategory('silver')">Silver Super (9)</button>
+            <button class="filter-btn" onclick="setCategory('gold')">Golden Elite (8)</button>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+
+        <!-- PLAYERS GRID (33 Archetypes) -->
+        <div class="grid" id="playerGrid">
+
+            <!-- GOALKEEPERS -->
+            <div class="card gk" data-cat="gk" data-name="Stopper">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Stopper</h3>
+                        <span class="badge gk">Keeper</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Goalkeeper (GK)</span>
+                    <p>The premier shot-stopper in competitive play. Maximum height combined with elite response allows him to dominate high aerial balls on corner kicks and save close-range headers.</p>
+                </div>
+            </div>
+
+            <div class="card gk" data-cat="gk" data-name="Sweeper">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Sweeper</h3>
+                        <span class="badge gk">Keeper</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: GK (High Defensive Line)</span>
+                    <p>Extremely fast response off his line. Automatically rushes outside the penalty area to intercept through-balls intended for fast attackers. Vulnerable to long chipped shots.</p>
+                </div>
+            </div>
+
+            <div class="card gk" data-cat="gk" data-name="Keeper">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Keeper</h3>
+                        <span class="badge gk">Keeper</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: GK</span>
+                    <p>Balanced standard goalkeeper offering equal stats across shot-stopping, positioning, and rushing. Highly reliable in lower to mid Arenas.</p>
+                </div>
+            </div>
+
+            <!-- REGULAR PLAYERS -->
+            <div class="card regular" data-cat="regular" data-name="Hammer">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Hammer</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CAM / ST / CB</span>
+                    <p>Maximum physical strength and shot power with strict one-touch passing behavior. Unbeatable in aerial duels, making him the core engine for corner kick routines.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Commander">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Commander</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CDM / CM</span>
+                    <p>Max response time combined with height. Plays rapid one-touch passes and wins crucial midfield tackles and aerial duels to maintain total ball control.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Explorer">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Explorer</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CB / Fullback</span>
+                    <p>A fast, mobile defensive player with high tackling ability. Essential for chasing down opponent Speedsters, though he occasionally dribbles out of defense.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Guard">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Guard</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CDM / RB / LB</span>
+                    <p>The safest ball distributor in the game. High response rate and strict one-touch passing ensure your defense never turns the ball over under pressure.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Intruder">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Intruder</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CB / Wing Back / ST</span>
+                    <p>Blistering speed matched with a high response stat. Frequently used at Center-Back in top Arenas to neutralize opponent counter-attacks.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Speedster">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Speedster</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: ST</span>
+                    <p>Pure acceleration and top speed. Runs straight into open space; has minimal passing vision and will dribble continuously until tackled or shooting.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Prowler">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Prowler</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: ST / CAM</span>
+                    <p>Absolute maximum response time. Reacts instantly to loose balls inside the box and unleashes accurate first-time shots past goalkeepers.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Protector">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Protector</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Fullback / CB</span>
+                    <p>Generates impressive long passing range while offering solid aerial height and tackling. Plays safe passes and delivers deep crosses from wide areas.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Producer">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Producer</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Wide Midfield (LM/RM)</span>
+                    <p>High skill, curve, and shooting range. Feeds strikers with curling long balls, though he takes an extra touch before releasing passes.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Engine">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Engine</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CM / Wide Midfield</span>
+                    <p>A true box-to-box midfielder with balanced stats across speed, strength, and passing. Covers massive ground across the pitch.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Menace">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Menace</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Central ST</span>
+                    <p>A robust central striker who holds off defenders using physical strength before executing high-powered shots from inside or outside the box.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Infiltrator">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Infiltrator</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Winger</span>
+                    <p>An agile wing dribbler who cuts inside from wide areas. Possesses good acceleration but tends to over-dribble into defensive traps.</p>
+                </div>
+            </div>
+
+            <div class="card regular" data-cat="regular" data-name="Architect">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Architect</h3>
+                        <span class="badge regular">Regular</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CAM / CM</span>
+                    <p>Elite curve and skill rating. Ideal set-piece taker for free kicks and corners; executes bending through-balls around defensive lines.</p>
+                </div>
+            </div>
+
+            <!-- SILVER SUPER PLAYERS -->
+            <div class="card silver" data-cat="silver" data-name="Poacher">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Poacher</h3>
+                        <span class="badge silver">Super</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Central Striker (ST)</span>
+                    <p><b>Upgraded Prowler:</b> The most lethal finisher in high-arena play. Combines incredible response time with precise box movement and clinical shooting.</p>
+                </div>
+            </div>
+
+            <div class="card silver" data-cat="silver" data-name="Bulldozer">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Bulldozer</h3>
+                        <span class="badge silver">Super</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: ST / CAM</span>
+                    <p><b>Upgraded Hammer:</b> Immense physical power and height combined with enhanced dribbling mobility. Dominates aerial crosses completely.</p>
+                </div>
+            </div>
+
+            <div class="card silver" data-cat="silver" data-name="Voyager">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Voyager</h3>
+                        <span class="badge silver">Super</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Center-Back (CB)</span>
+                    <p><b>Upgraded Explorer:</b> Faster, stronger, and boasts elite response times. The single best center-back for recovering and executing clean tackles.</p>
+                </div>
+            </div>
+
+            <div class="card silver" data-cat="silver" data-name="Invader">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Invader</h3>
+                        <span class="badge silver">Super</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CB / Wing Back / ST</span>
+                    <p><b>Upgraded Intruder:</b> Blistering pace matched with superior passing and tackling traits. Highly effective in both defense and attack.</p>
+                </div>
+            </div>
+
+            <div class="card silver" data-cat="silver" data-name="Jet">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Jet</h3>
+                        <span class="badge silver">Super</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: ST</span>
+                    <p><b>Upgraded Speedster:</b> Unmatched sprinting speed with slightly elevated response and smarter attacking runs onto direct through-balls.</p>
+                </div>
+            </div>
+
+            <div class="card silver" data-cat="silver" data-name="Major">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Major</h3>
+                        <span class="badge silver">Super</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CDM</span>
+                    <p><b>Upgraded Commander:</b> Taller and physically stronger. Totally dominates central aerial duels, though he takes slightly more touches on the ball.</p>
+                </div>
+            </div>
+
+            <div class="card silver" data-cat="silver" data-name="Marksman">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Marksman</h3>
+                        <span class="badge silver">Super</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Wide Midfield (LM/RM)</span>
+                    <p><b>Upgraded Producer:</b> Pinpoint curved crossing and long-range shooting accuracy. Delivers effortless assists into the penalty area.</p>
+                </div>
+            </div>
+
+            <div class="card silver" data-cat="silver" data-name="Warrior">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Warrior</h3>
+                        <span class="badge silver">Super</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CDM / CB</span>
+                    <p><b>Upgraded Guard:</b> Exceptional ball retention and tackling strength. Virtually impossible to dispossess when shielding the ball in midfield.</p>
+                </div>
+            </div>
+
+            <div class="card silver" data-cat="silver" data-name="Wizard">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Wizard</h3>
+                        <span class="badge silver">Super</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CAM / LM / RM</span>
+                    <p><b>Upgraded Architect:</b> Ultimate set-piece specialist with max curve and vision stats. Unlocks defensive setups with masterclass passing.</p>
+                </div>
+            </div>
+
+            <!-- GOLDEN ELITE PLAYERS -->
+            <div class="card gold" data-cat="gold" data-name="Hero">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Hero</h3>
+                        <span class="badge gold">Elite</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CAM / CDM</span>
+                    <p>An elite all-around archetype offering high consistency on the ball, physical tackling presence, and seamless transition play.</p>
+                </div>
+            </div>
+
+            <div class="card gold" data-cat="gold" data-name="Judge">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Judge</h3>
+                        <span class="badge gold">Elite</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CM / CDM</span>
+                    <p>Advanced engine archetype featuring max stamina and high response. Disrupts opponent buildup and distributes ball flawlessly.</p>
+                </div>
+            </div>
+
+            <div class="card gold" data-cat="gold" data-name="Villain">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Villain</h3>
+                        <span class="badge gold">Elite</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Central ST</span>
+                    <p>Elite target finisher. Blends massive shot power with physical shielding capabilities inside the penalty box.</p>
+                </div>
+            </div>
+
+            <div class="card gold" data-cat="gold" data-name="Lightning">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Lightning</h3>
+                        <span class="badge gold">Elite</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: ST / Winger</span>
+                    <p>Devastating speed coupled with physical strength. Outruns center-backs and resists shoulder tackles while sprinting.</p>
+                </div>
+            </div>
+
+            <div class="card gold" data-cat="gold" data-name="Composer">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Composer</h3>
+                        <span class="badge gold">Elite</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CM / CAM</span>
+                    <p>Midfield maestro featuring maximum vision and passing precision. Controls the tempo of high-arena competitive matches.</p>
+                </div>
+            </div>
+
+            <div class="card gold" data-cat="gold" data-name="Raider">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Raider</h3>
+                        <span class="badge gold">Elite</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Center-Back (CB)</span>
+                    <p>An aggressive defensive titan combining high speed, physical power, and sharp response to stop fast strikers.</p>
+                </div>
+            </div>
+
+            <div class="card gold" data-cat="gold" data-name="Pickpocket">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Pickpocket</h3>
+                        <span class="badge gold">Elite</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: CDM / Fullback</span>
+                    <p>Ball-winning specialist. Uses quick acceleration and response to dispossess attackers cleanly without conceding fouls.</p>
+                </div>
+            </div>
+
+            <div class="card gold" data-cat="gold" data-name="Gatecrasher">
+                <div class="card-type-bar"></div>
+                <div>
+                    <div class="card-header">
+                        <h3>Gatecrasher</h3>
+                        <span class="badge gold">Elite</span>
+                    </div>
+                    <span class="optimal-pos">Optimal Position: Winger / ST</span>
+                    <p>High-agility wing player with unpredictable off-the-ball movements to break low-block defensive formations.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ARENA UNLOCK PROGRESSION GUIDE -->
+        <div class="section-title" id="arenas">
+            <span>🏟️</span> Arena Progression & Player Unlocking Guide
+        </div>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Arena Level</th>
+                        <th>Stars Required</th>
+                        <th>Unlocked Player Archetypes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Arena 1</b></td>
+                        <td>0 Stars</td>
+                        <td>Infiltrator, Producer, Guard</td>
+                    </tr>
+                    <tr>
+                        <td><b>Arena 2</b></td>
+                        <td>40 Stars</td>
+                        <td>Engine, Speedster</td>
+                    </tr>
+                    <tr>
+                        <td><b>Arena 3</b></td>
+                        <td>100 Stars</td>
+                        <td>Architect, Counter-Attacking Tactics</td>
+                    </tr>
+                    <tr>
+                        <td><b>Arena 4</b></td>
+                        <td>200 Stars</td>
+                        <td>Prowler, Menace</td>
+                    </tr>
+                    <tr>
+                        <td><b>Arena 5</b></td>
+                        <td>380 Stars</td>
+                        <td>Intruder, Hammer</td>
+                    </tr>
+                    <tr>
+                        <td><b>Arena 6</b></td>
+                        <td>600 Stars</td>
+                        <td>Explorer, Commander</td>
+                    </tr>
+                    <tr>
+                        <td><b>Arena 7</b></td>
+                        <td>900 Stars</td>
+                        <td>Protector, Sweeper, Stopper</td>
+                    </tr>
+                    <tr>
+                        <td><b>Arena 8 - 10</b></td>
+                        <td>1,300+ Stars</td>
+                        <td>Super Players Events & Season Pass Crates</td>
+                    </tr>
+                    <tr>
+                        <td><b>Arena 11 & Infinity</b></td>
+                        <td>3,000+ Stars</td>
+                        <td>Golden Elite Crates & Top Tier Events</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- FORMATIONS GUIDE -->
+        <div class="section-title" id="formations">
+            <span>📐</span> Master Formations Vault
+        </div>
+
+        <div class="formation-card">
+            <h4>1. The 3-5-2 Formation <span class="formation-tag">Tier S Championship Setup</span></h4>
+            <p><b>Optimal Lineup:</b> Stopper (GK) | Voyager - Invader - Raider (CBs) | Marksman (LM) - Commander - Major - Guard (CDMs) - Producer (RM) | Bulldozer - Hammer (STs).</p>
+            <p><b>Execution Strategy:</b> Dominates high arenas. Safe, quick one-touch passing between Guards and Commanders moves the ball to wide midfielders (Marksman/Producer) for pinpoint crosses to Hammers/Bulldozers.</p>
+        </div>
+
+        <div class="formation-card">
+            <h4>2. The 5-3-2 Defensive Blueprint <span class="formation-tag">Tier S Counter Setup</span></h4>
+            <p><b>Optimal Lineup:</b> Stopper (GK) | Protector - Voyager - Intruder - Raider - Guard (5-Man Defense) | Commander - Major - Warrior (Midfield) | Poacher - Jet (STs).</p>
+            <p><b>Execution Strategy:</b> Total defense against counter-attacks. Dispossesses opponents using high-response defenders, then releases instant direct through-balls to Poacher or Jet.</p>
+        </div>
+
+        <div class="formation-card">
+            <h4>3. The 4-2-1-3 Attack Setup <span class="formation-tag">Tier A Heavy Offense</span></h4>
+            <p><b>Optimal Lineup:</b> Stopper (GK) | Guard - Voyager - Invader - Protector (Back Line) | Commander - Major (CDMs) | Hammer / Composer (CAM) | Lightning - Poacher - Jet (Attackers).</p>
+            <p><b>Execution Strategy:</b> High pressing system. Overwhelms opposition defenses with three lethal runners upfront while maintaining a tight defensive pivot in midfield.</p>
+        </div>
+
+        <!-- PRO CORNER KICK GUIDE -->
+        <div class="section-title" id="tactics">
+            <span>🎯</span> 100% Corner Kick Scoring Routine
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>1. Target Selection</h3>
+                <p>Always place your highest aerial strength players (Hammer, Bulldozer, or Major) in the central penalty box positions during corner setups.</p>
+            </div>
+            <div class="card">
+                <h3>2. Trajectory & Curve</h3>
+                <p>Draw a smooth curved line aiming slightly behind the front defender, dropping the ball directly onto your Hammer or Major's head at maximum height.</p>
+            </div>
+            <div class="card">
+                <h3>3. Far-Post Finishing</h3>
+                <p>When executing the header, tap towards the far post corner. This leaves goalkeepers like Stopper or Sweeper unable to make a save.</p>
+            </div>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <div class="section-title" id="faq">
+            <span>❓</span> Frequently Asked Questions (FAQ)
+        </div>
+
+        <div class="faq-item">
+            <h4>Q1: How do I get Level 10 Captains for my team?</h4>
+            <p>You can add high-level players as friends on Facebook or join our Telegram community (@ScoreMatch34) where active members share captain exchange links daily.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Q2: Which Goalkeeper is the absolute best in Score! Match?</h4>
+            <p>The <b>Stopper</b> is universally considered the best goalkeeper in competitive high-arena play due to his superior height and shot-stopping response on corners.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Q3: How do I stop opponent Speedsters and Jets?</h4>
+            <p>Place high-speed and high-response defenders like <b>Voyager, Intruder, Raider, or Explorer</b> in your central defense line instead of slow defenders.</p>
+        </div>
+
+        <!-- FIXED NON-OVERLAPPING TELEGRAM COMMUNITY BANNER -->
+        <div class="community-box">
+            <h2>Join the #1 Score! Match Telegram Community</h2>
+            <p>Connect directly with top Arena 11 & Infinity players. Get daily friendly matches, team strategy reviews, captain exchanges, and free code updates.</p>
+            <a href="https://t.me/ScoreMatch34" target="_blank" class="btn-community-telegram">
+                🚀 Join @ScoreMatch34 Group Now
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Score! Match Official Strategy Hub & Community Database &copy; 2026. All rights reserved.</p>
+        <p style="margin-top: 8px;">Official Telegram Community: <a href="https://t.me/ScoreMatch34" target="_blank">@ScoreMatch34</a></p>
+    </footer>
+
+    <!-- Search & Category Filtering Script -->
+    <script>
+        function filterDatabase() {
+            let query = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.querySelectorAll('#playerGrid .card');
+
+            cards.forEach(card => {
+                let text = card.innerText.toLowerCase();
+                let name = card.getAttribute('data-name').toLowerCase();
+                if (text.includes(query) || name.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function setCategory(category) {
+            let cards = document.querySelectorAll('#playerGrid .card');
+            let btns = document.querySelectorAll('.filter-btn');
+
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    if (card.getAttribute('data-cat') === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
