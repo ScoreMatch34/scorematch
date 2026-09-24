@@ -14,13 +14,13 @@
             --card-bg: #0f172a;
             --card-hover: #1e293b;
             --accent-green: #10b981;
-            --accent-green-glow: rgba(16, 185, 129, 0.3);
+            --accent-green-glow: rgba(16, 185, 129, 0.4);
             --accent-blue: #0088cc;
             --accent-blue-hover: #00a2ff;
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(16, 185, 129, 0.4);
+            --border-subtle: rgba(255, 255, 255, 0.1);
+            --border-glow: rgba(16, 185, 129, 0.5);
         }
 
         * {
@@ -38,13 +38,13 @@
             overflow-x: hidden;
         }
 
-        /* Scrollbar */
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent-green); }
 
-        /* Top Telegram Announcement Bar */
+        /* Top Announcement Bar for Telegram Promotion */
         .top-promo-bar {
             background: linear-gradient(90deg, #004488, var(--accent-blue), #004488);
             color: #fff;
@@ -63,7 +63,7 @@
 
         .top-promo-bar a {
             color: #fff;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.35);
             padding: 4px 14px;
             border-radius: 20px;
             text-decoration: none;
@@ -76,9 +76,9 @@
             color: #000;
         }
 
-        /* Sticky Header */
+        /* Sticky Navigation Header */
         header {
-            background: rgba(6, 9, 17, 0.95);
+            background: rgba(6, 9, 17, 0.92);
             backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
@@ -100,7 +100,7 @@
             letter-spacing: -0.5px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .btn-nav-telegram {
@@ -123,28 +123,46 @@
             box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6);
         }
 
-        /* Hero Section */
+        /* Hero Section with Football Stadium Overlay */
         .hero {
-            padding: 70px 20px 50px;
+            padding: 90px 20px 60px;
             text-align: center;
-            background: radial-gradient(circle at 50% 20%, #112238 0%, var(--bg-dark) 75%);
+            background: linear-gradient(180deg, rgba(6, 9, 17, 0.75) 0%, rgba(6, 9, 17, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            border-bottom: 3px solid var(--accent-green);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 46px;
+            font-size: 52px;
             font-weight: 900;
             letter-spacing: -1.5px;
             margin-bottom: 16px;
-            background: linear-gradient(135deg, #ffffff 30%, var(--accent-green));
+            background: linear-gradient(135deg, #ffffff 40%, var(--accent-green));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
 
         .hero p {
-            font-size: 17px;
-            color: var(--text-secondary);
-            max-width: 750px;
+            font-size: 18px;
+            color: #cbd5e1;
+            max-width: 780px;
             margin: 0 auto 35px;
+            font-weight: 500;
         }
 
         .hero-actions {
@@ -152,7 +170,6 @@
             justify-content: center;
             gap: 16px;
             flex-wrap: wrap;
-            margin-bottom: 30px;
         }
 
         .btn-hero-primary {
@@ -163,13 +180,13 @@
             font-weight: 800;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px var(--accent-green-glow);
+            box-shadow: 0 6px 25px var(--accent-green-glow);
             font-size: 16px;
         }
 
         .btn-hero-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.5);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.6);
         }
 
         .btn-hero-secondary {
@@ -180,13 +197,13 @@
             font-weight: 800;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.3);
+            box-shadow: 0 6px 25px rgba(0, 136, 204, 0.4);
             font-size: 16px;
         }
 
         .btn-hero-secondary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.6);
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.7);
         }
 
         /* Main Container */
@@ -197,61 +214,73 @@
         }
 
         .section-title {
-            font-size: 26px;
-            font-weight: 800;
-            margin: 40px 0 25px;
+            font-size: 30px;
+            font-weight: 900;
+            margin: 50px 0 30px;
             text-align: center;
             color: #fff;
+            letter-spacing: -0.5px;
         }
 
         /* Hub Cards Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 28px;
             margin-bottom: 50px;
         }
 
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-subtle);
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 24px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
         }
 
         .card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             background: var(--card-hover);
             border-color: var(--border-glow);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
         }
 
-        .card-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
+        /* Card Image Holder */
+        .card-img-holder {
+            height: 180px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-img-holder::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, var(--card-bg), transparent);
+        }
+
+        .card-content {
+            padding: 24px 28px 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card h3 {
             font-size: 22px;
             font-weight: 800;
             color: #fff;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .card p {
@@ -261,15 +290,14 @@
             line-height: 1.6;
         }
 
+        /* Direct PDF Links Buttons */
         .card-btn {
             background: linear-gradient(135deg, var(--accent-green), #059669);
             color: #000;
-            border: none;
-            padding: 14px 24px;
+            padding: 15px 24px;
             border-radius: 30px;
             font-weight: 800;
             font-size: 15px;
-            cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
@@ -278,36 +306,40 @@
             text-decoration: none;
             text-align: center;
             width: 100%;
+            box-shadow: 0 4px 15px var(--accent-green-glow);
         }
 
         .card-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px var(--accent-green-glow);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.6);
         }
 
-        /* Community Telegram Box */
+        /* Community Telegram Box with Football Visual Background */
         .community-box {
-            background: linear-gradient(135deg, #091a29, #11283c, #0d2133);
+            background: linear-gradient(135deg, rgba(9, 26, 41, 0.9), rgba(13, 33, 51, 0.95)),
+                        url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             border: 2px solid var(--accent-blue);
-            border-radius: 24px;
-            padding: 45px 30px;
+            border-radius: 28px;
+            padding: 55px 30px;
             text-align: center;
             margin: 40px 0;
-            box-shadow: 0 15px 40px rgba(0, 136, 204, 0.2);
+            box-shadow: 0 15px 45px rgba(0, 136, 204, 0.3);
         }
 
         .community-box h2 {
-            font-size: 32px;
+            font-size: 34px;
             color: #fff;
             margin-bottom: 12px;
             font-weight: 900;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
 
         .community-box p {
-            color: var(--text-secondary);
+            color: #e2e8f0;
             max-width: 680px;
-            margin: 0 auto 28px;
+            margin: 0 auto 30px;
             font-size: 16px;
+            font-weight: 500;
         }
 
         .btn-community-telegram {
@@ -316,118 +348,18 @@
             gap: 10px;
             background: linear-gradient(135deg, var(--accent-blue), #005599);
             color: #fff;
-            padding: 16px 40px;
+            padding: 16px 42px;
             border-radius: 35px;
             font-size: 17px;
             font-weight: 800;
             text-decoration: none;
-            box-shadow: 0 6px 25px rgba(0, 136, 204, 0.4);
+            box-shadow: 0 6px 25px rgba(0, 136, 204, 0.5);
             transition: all 0.3s ease;
         }
 
         .btn-community-telegram:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.7);
-        }
-
-        /* In-App PDF Viewer Modal Overlay */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-        }
-
-        .modal-container {
-            background: #0f172a;
-            border: 2px solid var(--accent-green);
-            border-radius: 20px;
-            width: 100%;
-            max-width: 1000px;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
-        }
-
-        .modal-header {
-            background: #060911;
-            padding: 14px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .modal-title {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--accent-green);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .btn-modal-action {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 1px solid var(--border-subtle);
-            padding: 6px 14px;
-            border-radius: 15px;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .btn-modal-action:hover {
-            background: var(--accent-green);
-            color: #000;
-        }
-
-        .btn-modal-close {
-            background: #ef4444;
-            color: #fff;
-            border: none;
-            padding: 6px 16px;
-            border-radius: 15px;
-            font-size: 14px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .btn-modal-close:hover {
-            background: #dc2626;
-        }
-
-        .modal-body {
-            flex-grow: 1;
-            width: 100%;
-            height: 100%;
-            background: #1e293b;
-        }
-
-        .modal-body iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.8);
         }
 
         /* Footer */
@@ -448,12 +380,12 @@
 
         @media (max-width: 768px) {
             header { padding: 12px 20px; }
-            .hero h1 { font-size: 32px; }
+            .hero h1 { font-size: 34px; }
             .hero p { font-size: 15px; }
-            .community-box { padding: 30px 18px; }
+            .card-img-holder { height: 150px; }
+            .community-box { padding: 35px 20px; }
             .community-box h2 { font-size: 24px; }
             .btn-community-telegram { padding: 14px 28px; font-size: 15px; width: 100%; justify-content: center; }
-            .modal-container { height: 95vh; }
         }
     </style>
 </head>
@@ -473,10 +405,11 @@
         </a>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Football Stadium Visual -->
     <section class="hero">
+        <span class="hero-badge">Official Strategy & Knowledge Hub</span>
         <h1>Score! Match</h1>
-        <p>Your complete official strategy database. Explore all 39 player archetypes, master championship formations, and unlock pro corner kick routines.</p>
+        <p>The ultimate official community strategy database. Access full guides for all 39 player archetypes, top formations, and 27 pro tactics.</p>
         
         <div class="hero-actions">
             <a href="#guides" class="btn-hero-primary">📖 Explore Guides</a>
@@ -486,50 +419,56 @@
 
     <!-- Main Content Container -->
     <div class="container" id="guides">
-        <h2 class="section-title">Official Guides Vault</h2>
+        <h2 class="section-title">Official Strategy Vault</h2>
 
-        <!-- Cards Grid -->
+        <!-- Cards Grid with Football Images -->
         <div class="grid">
 
             <!-- Card 1: Players Database -->
             <div class="card">
-                <div>
-                    <div class="card-icon">⚽</div>
-                    <h3>39 Player Archetypes</h3>
-                    <p>Complete breakdown of all 39 players including Goalkeepers, Regulars, Super, and Golden Elite players with stats, passing behaviors, and best positions.</p>
+                <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>39 Player Archetypes</h3>
+                        <p>Complete breakdown of all 39 players including Goalkeepers, Regulars, Super, and Golden Elite players with stats, traits, and best positions.</p>
+                    </div>
+                    <a href="players.pdf" target="_blank" class="card-btn">
+                        📄 Open Player Guide (PDF)
+                    </a>
                 </div>
-                <button class="card-btn" onclick="openPdfModal('players.pdf', '39 Player Archetypes Guide')">
-                    📄 Open Player Guide
-                </button>
             </div>
 
             <!-- Card 2: Formations Vault -->
             <div class="card">
-                <div>
-                    <div class="card-icon">📋</div>
-                    <h3>Top Formations Vault</h3>
-                    <p>Detailed breakdown of top 10 winning formations (3-5-2, 5-3-2, 4-2-1-3) with custom lineups, tactics, strengths, and defensive countermeasures.</p>
+                <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Top Formations Vault</h3>
+                        <p>Detailed breakdown of top winning formations (3-5-2, 5-3-2, 4-2-1-3) with custom lineups, tactics, strengths, and counters.</p>
+                    </div>
+                    <a href="formations.pdf" target="_blank" class="card-btn">
+                        📋 Open Formations Guide (PDF)
+                    </a>
                 </div>
-                <button class="card-btn" onclick="openPdfModal('formations.pdf', 'Master Formations Vault')">
-                    📋 Open Formations Guide
-                </button>
             </div>
 
             <!-- Card 3: Pro Tips & Tricks -->
             <div class="card">
-                <div>
-                    <div class="card-icon">💡</div>
-                    <h3>27 Pro Tips & Secrets</h3>
-                    <p>Master 1-touch passing, 100% corner kick formulas, fast defender setups, and level-up strategies to dominate Arena 11 and Infinity Arena.</p>
+                <div class="card-img-holder" style="background-image: url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>27 Pro Tips & Secrets</h3>
+                        <p>Master 1-touch passing, 100% corner kick formulas, fast defender setups, and arena tactics to dominate high arena play.</p>
+                    </div>
+                    <a href="tips.pdf" target="_blank" class="card-btn">
+                        💡 Open Pro Tips & Tricks (PDF)
+                    </a>
                 </div>
-                <button class="card-btn" onclick="openPdfModal('tips.pdf', '27 Pro Tips & Secrets')">
-                    💡 Open Pro Tips & Tricks
-                </button>
             </div>
 
         </div>
 
-        <!-- Community Banner -->
+        <!-- Community Banner with Stadium Visual -->
         <div class="community-box">
             <h2>Join the #1 Score! Match Telegram Community</h2>
             <p>Connect with top Infinity Arena players, exchange Level 10 Captains for free, play custom tournaments, and get daily tactic reviews!</p>
@@ -539,53 +478,11 @@
         </div>
     </div>
 
-    <!-- In-App PDF Viewer Modal -->
-    <div class="modal-overlay" id="pdfModal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div class="modal-title">
-                    <span>📄</span> <span id="modalTitle">Guide Viewer</span>
-                </div>
-                <div class="modal-actions">
-                    <a href="#" id="modalDirectLink" target="_blank" class="btn-modal-action">↗️ Open Full Tab</a>
-                    <button class="btn-modal-close" onclick="closePdfModal()">✕ Close</button>
-                </div>
-            </div>
-            <div class="modal-body">
-                <iframe id="pdfFrame" src=""></iframe>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer>
         <p>© Score! Match Official Community Hub. All rights reserved.</p>
         <p style="margin-top: 8px;">Official Telegram Group: <a href="https://t.me/ScoreMatch34" target="_blank">@ScoreMatch34</a></p>
     </footer>
 
-    <!-- JavaScript Modal Logic -->
-    <script>
-        function openPdfModal(pdfPath, title) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('pdfFrame').src = pdfPath;
-            document.getElementById('modalDirectLink').href = pdfPath;
-            document.getElementById('pdfModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Prevent page background scrolling
-        }
-
-        function closePdfModal() {
-            document.getElementById('pdfModal').style.display = 'none';
-            document.getElementById('pdfFrame').src = '';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-
-        // Close modal when clicking outside content box
-        document.getElementById('pdfModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePdfModal();
-            }
-        });
-    </script>
 </body>
 </html>
-
