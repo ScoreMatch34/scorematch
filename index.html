@@ -70,7 +70,6 @@ body {
 .icon-svg { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle; }
 .icon-lg { width: 22px; height: 22px; }
 
-/* Top Announcement Ticker */
 .top-ticker {
   background: linear-gradient(90deg, #111827, #1e293b, #111827);
   color: var(--main-text);
@@ -104,7 +103,6 @@ body {
 
 .top-ticker a:hover { background: var(--soft-gold); color: var(--bg-color); }
 
-/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -171,7 +169,6 @@ header {
   box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
 }
 
-/* Hero */
 .hero-section {
   padding: 100px 20px 80px;
   text-align: center;
@@ -256,7 +253,6 @@ header {
 
 .btn-telegram:hover { background: rgba(59, 130, 246, 0.15); border-color: var(--primary-blue); transform: translateY(-2px); }
 
-/* Container */
 .container { max-width: 1250px; margin: 0 auto; padding: 20px 20px 100px; }
 
 .section-header {
@@ -280,7 +276,6 @@ header {
   max-width: 780px;
 }
 
-/* Filter Bar */
 .filter-bar {
   display: flex;
   gap: 12px;
@@ -325,7 +320,6 @@ header {
 .chip:hover { color: var(--main-text); border-color: rgba(59,130,246,0.4); }
 .chip.active { background: var(--primary-blue); color: #fff; border-color: var(--primary-blue); }
 
-/* Player Cards Grid */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -380,6 +374,7 @@ header {
 
 .pc-name { font-size: 17px; font-weight: 800; line-height: 1.2; }
 .pc-type { font-size: 12px; color: var(--secondary-text); font-weight: 700; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+.pc-realname { font-size: 11px; color: var(--soft-gold); font-weight: 700; font-style: italic; margin-top: 2px; letter-spacing: 0.3px; opacity: 0.9; }
 
 .pc-positions { display: flex; gap: 6px; flex-wrap: wrap; }
 
@@ -400,6 +395,20 @@ header {
 .mini-stat .v { font-size: 15px; font-weight: 800; color: var(--main-text); }
 .mini-stat .l { font-size: 9px; font-weight: 800; color: var(--secondary-text); letter-spacing: 0.6px; margin-top: 1px; }
 
+.pc-desc {
+  font-size: 11.5px;
+  color: #93C5FD;
+  line-height: 1.5;
+  font-weight: 500;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(255,255,255,0.08);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .tier-badge {
   position: absolute;
   top: 14px; right: 14px;
@@ -417,11 +426,6 @@ header {
 
 .no-results { text-align: center; padding: 50px 20px; color: var(--secondary-text); font-weight: 600; grid-column: 1 / -1; }
 
-/* ============================================
-   COMPARISON — FIXED LAYOUT
-   Values now sit OUTSIDE the bars, so they
-   are always visible even for low stats.
-   ============================================ */
 .compare-controls { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 22px; }
 .compare-controls .filter-select { flex: 1; min-width: 200px; }
 
@@ -508,7 +512,6 @@ header {
   color: var(--soft-gold);
 }
 
-/* Formations */
 .formation-card {
   background: linear-gradient(160deg, var(--card-bg) 0%, var(--card-bg-2) 100%);
   border: 1px solid var(--card-border);
@@ -549,7 +552,6 @@ header {
   margin-top: 14px;
 }
 
-/* Tips */
 .tips-list { display: flex; flex-direction: column; gap: 10px; }
 
 .tip-item {
@@ -601,7 +603,6 @@ header {
 
 .load-more-btn:hover { background: var(--primary-blue); border-color: var(--primary-blue); transform: translateY(-2px); }
 
-/* FAQ */
 .faq-section {
   margin-top: 80px;
   background-color: var(--card-bg);
@@ -620,7 +621,6 @@ header {
 .faq-item h4 { font-size: 16px; font-weight: 700; color: var(--soft-gold); margin-bottom: 10px; line-height: 1.5; }
 .faq-item p { font-size: 14.5px; color: var(--secondary-text); line-height: 1.65; font-weight: 500; }
 
-/* Community Box */
 .community-box {
   background: linear-gradient(135deg, #111827, #1e293b),
               url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
@@ -653,7 +653,6 @@ header {
 
 .community-btn:hover { background: var(--darker-blue); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5); }
 
-/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -720,12 +719,25 @@ header {
 
 .modal-name { font-size: 26px; font-weight: 800; line-height: 1.15; }
 .modal-type { font-size: 13px; color: var(--soft-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px; }
+.modal-realname { font-size: 12.5px; color: var(--soft-gold); font-weight: 700; font-style: italic; letter-spacing: 0.3px; margin-top: 3px; opacity: 0.9; }
 .modal-base { font-size: 12.5px; color: var(--secondary-text); font-weight: 700; margin-top: 4px; }
 
 .modal-section { margin-bottom: 20px; }
 .modal-section h5 { font-size: 11px; font-weight: 800; letter-spacing: 1px; color: var(--primary-blue); text-transform: uppercase; margin-bottom: 9px; }
 
 .modal-section p { font-size: 14.5px; color: var(--secondary-text); line-height: 1.7; font-weight: 500; }
+
+.modal-description {
+  background: rgba(59, 130, 246, 0.06);
+  border-left: 3px solid var(--primary-blue);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #BFDBFE;
+  line-height: 1.75;
+  font-weight: 500;
+  margin-top: 4px;
+}
 
 .attr-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 
@@ -748,7 +760,6 @@ header {
 .stat-bar { height: 5px; background: rgba(255,255,255,0.08); border-radius: 4px; margin-top: 7px; overflow: hidden; }
 .stat-bar div { height: 100%; border-radius: 4px; background: var(--primary-blue); }
 
-/* Behaviour bars */
 .behaviour-grid { display: flex; flex-direction: column; gap: 6px; }
 .behaviour-row { display: flex; align-items: center; gap: 8px; }
 .behaviour-label { font-size: 11px; font-weight: 700; color: var(--secondary-text); min-width: 60px; }
@@ -759,7 +770,6 @@ header {
 .bool-yes { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.4); }
 .bool-no { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid rgba(239,68,68,0.4); }
 
-/* Footer */
 footer { text-align: center; padding: 42px 20px 30px; border-top: 1px solid var(--border-subtle); background: var(--bg-color); color: var(--secondary-text); font-size: 14px; }
 footer a { color: var(--soft-gold); text-decoration: none; font-weight: 700; }
 footer .footer-line { margin-top: 8px; }
@@ -1024,6 +1034,7 @@ const PLAYERS = [
     positions: ["GK"],
     attributes: ["Balanced Saving Ability", "Positioning"],
     strategy: "Stays close to the goal line. Reliable for stopping shots from outside the box, but will not rush out to intercept long through-balls.",
+    description: "A classic, stay-at-home goalkeeper. Excels at blocking long-range shots and holds his line reliably. Best when your defensive line stays deep. Weakness: won't come out to intercept through-balls, so fast strikers can beat him on breakaways.",
     stats: { speed: 27, height: 38, strength: 27, power: 43, skill: 43, response: 43 },
     behaviour: { shoot: 100, pass: 37, dribble: 48, clear: 8, safe: 25, attacking: 75, marking: false, running: true }
   },
@@ -1033,6 +1044,7 @@ const PLAYERS = [
     positions: ["GK"],
     attributes: ["High Height", "Shot Stopping Power"],
     strategy: "The best long-range and header shot-stopper. His height reaches high corners, but slow reaction makes him vulnerable to close-range tap-ins.",
+    description: "The best shot-stopper in the game for long-range and header situations. His tall frame lets him reach top corners with ease. Ideal for high-crossing opponents and set-pieces. Weakness: his slow reaction leaves him exposed to quick tap-ins and low close-range shots.",
     stats: { speed: 25, height: 50, strength: 36, power: 50, skill: 50, response: 43 },
     behaviour: { shoot: 100, pass: 57, dribble: 30, clear: 11, safe: 70, attacking: 30, marking: false, running: false }
   },
@@ -1042,6 +1054,7 @@ const PLAYERS = [
     positions: ["GK"],
     attributes: ["High Acceleration", "Fast Rush-Out Reaction"],
     strategy: "Rushes out of the penalty box to clear long balls before attackers reach them. Excellent against speed-heavy opponent setups.",
+    description: "An aggressive, high-line goalkeeper who plays almost like an extra defender. Rushes out to clear long balls before strikers reach them. Perfect against speedster-heavy teams. Weakness: vulnerable to chips and lobs when caught off his line.",
     stats: { speed: 39, height: 22, strength: 22, power: 32, skill: 38, response: 50 },
     behaviour: { shoot: 73, pass: 100, dribble: 97, clear: 9, safe: 55, attacking: 45, marking: false, running: true }
   },
@@ -1053,6 +1066,7 @@ const PLAYERS = [
     positions: ["CDM", "CB", "CM"],
     attributes: ["Maximum Height", "Maximum Response Time", "Safe Passing"],
     strategy: "Midfield boss. Wins aerial duels on goal-kicks and immediately distributes the ball safely to wingers or attack. The best defensive midfielder in the game.",
+    description: "A midfield boss with maximum height and response. Wins every aerial duel on goal-kicks and immediately releases safe passes. The best defensive midfielder in the game. Weakness: terrible dribbling and shooting — never ask him to create chances.",
     stats: { speed: 24, height: 50, strength: 45, power: 7, skill: 1, response: 50 },
     behaviour: { shoot: 21, pass: 100, dribble: 33, clear: 20, safe: 30, attacking: 70, marking: false, running: false }
   },
@@ -1062,6 +1076,7 @@ const PLAYERS = [
     positions: ["CB", "CDM", "CM"],
     attributes: ["100% Safe Passing", "High Strength", "High Tackling"],
     strategy: "Plays 1-touch safe passes instantly upon receiving the ball without dribbling. Essential for building possession without risking turnovers.",
+    description: "The safest passer in the game. Never dribbles and always releases the ball instantly. Perfect for recycling possession and building from the back under pressure. Weakness: contributes almost nothing to attack — only use him in midfield or defence.",
     stats: { speed: 33, height: 21, strength: 38, power: 11, skill: 16, response: 43 },
     behaviour: { shoot: 21, pass: 100, dribble: 33, clear: 20, safe: 30, attacking: 70, marking: false, running: false }
   },
@@ -1071,6 +1086,7 @@ const PLAYERS = [
     positions: ["CB", "LB", "RB"],
     attributes: ["High Pace", "Defensive Tackling"],
     strategy: "Fast defender capable of recovering ground quickly against counter-attacks. Dribbles slightly more than Guards before passing.",
+    description: "A fast, recovering defender built for counter-attack situations. Excellent at chasing down fast forwards and covering ground. Best at centre-back or full-back in high-line setups. Weakness: slightly weak in aerial duels compared to Protector or Commander.",
     stats: { speed: 43, height: 27, strength: 21, power: 11, skill: 11, response: 38 },
     behaviour: { shoot: 73, pass: 100, dribble: 97, clear: 9, safe: 55, attacking: 45, marking: false, running: true }
   },
@@ -1080,6 +1096,7 @@ const PLAYERS = [
     positions: ["CB", "LB", "RB"],
     attributes: ["High Strength", "Heading Ability", "Safe Passing"],
     strategy: "A taller, stronger version of the Guard who can cross the ball if pushed into wider fullback areas while remaining defensively solid.",
+    description: "A tall, strong defender who combines Guard-level safe passing with genuine physical presence. Can push forward to cross if needed but stays defensively solid. Ideal for centre-back or full-back. Weakness: not as fast as Explorers — vulnerable to pacey wingers.",
     stats: { speed: 33, height: 43, strength: 32, power: 11, skill: 21, response: 43 },
     behaviour: { shoot: 80, pass: 100, dribble: 50, clear: 20, safe: 65, attacking: 35, marking: true, running: true }
   },
@@ -1089,6 +1106,7 @@ const PLAYERS = [
     positions: ["LB", "RB", "CM"],
     attributes: ["High Stamina", "All-Round Work Rate"],
     strategy: "Covers the entire pitch from box to box. Assists both in defensive pressing and offensive wing support.",
+    description: "A box-to-box workhorse that covers the entire pitch. Runs endlessly, supports both attack and defence, and never seems to stop. Ideal for formations that need constant energy in midfield. Weakness: doesn't excel at any one thing — a jack of all trades.",
     stats: { speed: 33, height: 27, strength: 21, power: 21, skill: 21, response: 33 },
     behaviour: { shoot: 100, pass: 63, dribble: 55, clear: 10, safe: 25, attacking: 75, marking: false, running: true }
   },
@@ -1098,6 +1116,7 @@ const PLAYERS = [
     positions: ["CAM", "CM"],
     attributes: ["Maximum Skill", "Extreme Curve Passing", "Pass Behaviour 100/100"],
     strategy: "Specialised playmaker. Delivers curved through-balls over or around opposition lines to set up clean scoring opportunities. Will attempt to pass immediately.",
+    description: "A specialised playmaker with maximum skill and curve. Delivers curved through-balls that bypass entire defensive lines. Best at CAM or central midfield for creating chances. Weakness: very fragile — gets tackled constantly, so avoid under pressure.",
     stats: { speed: 34, height: 17, strength: 17, power: 11, skill: 50, response: 23 },
     behaviour: { shoot: 17, pass: 40, dribble: 9, clear: 100, safe: 75, attacking: 25, marking: true, running: false }
   },
@@ -1107,6 +1126,7 @@ const PLAYERS = [
     positions: ["LM", "RM", "CM", "CAM"],
     attributes: ["High Curve", "Excellent Crossing Precision", "Pass Behaviour 100/100", "Dribble Rating 33/100"],
     strategy: "Delivers curling crosses from the flanks directly to strikers' heads. Holds the ball slightly longer to find optimal passing lanes. The best shooter among normal players.",
+    description: "The best shooter and crosser among normal players. Delivers pinpoint curled crosses and scores from impossible angles. Perfect on the wings or as a central attacking midfielder. Weakness: very low dribbling — he will pass instantly and can't hold the ball.",
     stats: { speed: 33, height: 21, strength: 27, power: 27, skill: 43, response: 22 },
     behaviour: { shoot: 100, pass: 73, dribble: 46, clear: 10, safe: 35, attacking: 65, marking: false, running: false }
   },
@@ -1116,6 +1136,7 @@ const PLAYERS = [
     positions: ["CB", "LW", "RW"],
     attributes: ["High Speed", "High Response", "Smart Distribution"],
     strategy: "Fast and responsive. Excellent at Center Back to neutralize opponent Speedsters, or as a winger who can cross before getting tackled.",
+    description: "The fastest defender-type player and a defensive nightmare for Speedsters. Excellent at centre-back to neutralise fast forwards, or as a winger who can cross before being tackled. Weakness: low strength and physicality — loses aerial duels easily.",
     stats: { speed: 48, height: 16, strength: 21, power: 11, skill: 16, response: 33 },
     behaviour: { shoot: 73, pass: 100, dribble: 97, clear: 9, safe: 55, attacking: 45, marking: false, running: true }
   },
@@ -1125,6 +1146,7 @@ const PLAYERS = [
     positions: ["LW", "RW", "ST"],
     attributes: ["Dribbling", "Agility", "Decent Speed"],
     strategy: "Cuts inside from wider areas to attempt direct shots on goal. Prone to over-dribbling if not played into space. A 'lowkey curve lover'.",
+    description: "A quick, agile dribbler who cuts inside from the wings looking for shooting chances. Naturally curls the ball on shots. Best used as a winger in attacking formations. Weakness: over-dribbles constantly and loses possession — give him space or he'll be tackled.",
     stats: { speed: 43, height: 21, strength: 16, power: 16, skill: 27, response: 22 },
     behaviour: { shoot: 46, pass: 91, dribble: 100, clear: 49, safe: 45, attacking: 55, marking: false, running: true }
   },
@@ -1134,6 +1156,7 @@ const PLAYERS = [
     positions: ["ST"],
     attributes: ["Attacking Positioning", "Finishing"],
     strategy: "An attacking striker option used in 4-4-2 formations. Works best when paired with a tall target man like the Hammer.",
+    description: "A dependable attacking striker used in 4-4-2 setups. Good positioning and finishing inside the box. Works best next to a tall target man like the Hammer. Weakness: average speed and no special traits — a solid but not spectacular option.",
     stats: { speed: 38, height: 27, strength: 32, power: 32, skill: 21, response: 33 },
     behaviour: { shoot: 100, pass: 73, dribble: 46, clear: 10, safe: 35, attacking: 65, marking: false, running: false }
   },
@@ -1143,6 +1166,7 @@ const PLAYERS = [
     positions: ["ST", "LW", "RW"],
     attributes: ["Maximum Speed", "Maximum Acceleration"],
     strategy: "Explosive runner in open space. Rarely passes and tends to dribble directly into tackles if not given clear running paths. Requires a long lead pass.",
+    description: "The fastest player in the game, unmatched at outrunning defenders. Deadly on through-balls and counter-attacks. Must be given long lead passes to be effective. Weakness: reckless dribbling causes him to lose the ball in 1-2 seconds if given a short pass.",
     stats: { speed: 50, height: 12, strength: 17, power: 17, skill: 11, response: 22 },
     behaviour: { shoot: 46, pass: 91, dribble: 100, clear: 49, safe: 45, attacking: 55, marking: false, running: true }
   },
@@ -1152,6 +1176,7 @@ const PLAYERS = [
     positions: ["CAM", "ST"],
     attributes: ["Maximum Response Time", "Quick Release", "Near-Post Preference"],
     strategy: "Reacts faster than any defender to loose balls. Shoots instantly upon receiving inside the penalty box. A 'near post lover' — naturally aims near post.",
+    description: "The fastest-reacting finisher in the game. Reacts to loose balls before any defender and shoots instantly inside the box. Naturally targets the near post. Best at striker or CAM for poaching goals. Weakness: terrible passing — never use him as a link-up player.",
     stats: { speed: 39, height: 17, strength: 17, power: 27, skill: 16, response: 50 },
     behaviour: { shoot: 78, pass: 21, dribble: 100, clear: 7, safe: 5, attacking: 95, marking: false, running: true }
   },
@@ -1161,215 +1186,239 @@ const PLAYERS = [
     positions: ["CAM", "ST", "CM"],
     attributes: ["Maximum Shot Power", "Maximum Height", "Maximum Strength"],
     strategy: "The ultimate aerial target. Dominates set-pieces and unleashes unstoppable long-range shots. Play 1-touch headers or passes with him.",
+    description: "A monstrous aerial target and long-range specialist. Wins almost every header and can score from outside the box with pure power. Best used at striker or attacking midfield for crosses and set-pieces. Weakness: extremely slow and can't dribble — must be played with 1-touch passes only.",
     stats: { speed: 22, height: 43, strength: 48, power: 43, skill: 5, response: 22 },
     behaviour: { shoot: 100, pass: 57, dribble: 30, clear: 11, safe: 70, attacking: 30, marking: false, running: false }
   },
 
   /* ---------- SUPER PLAYERS ---------- */
   {
-    id: "major", name: "Major", short: "Major", category: "super",
+    id: "major", name: "Major", realName: "Wolfgang", short: "Major", category: "super",
     type: "Super Commander", base: "Commander", tier: "S", accent: "#3B82F6",
     positions: ["CDM", "CB", "CM"],
     attributes: ["Tall Height", "Max Shot Power", "High Response"],
     strategy: "Upgraded Commander who can also score long-range screamers. His aerial ability is unmatched among defensive midfielders.",
+    description: "An upgraded Commander who can also score long-range screamers. Keeps every strength of the base Commander but adds shooting power. Best at CDM, CB, or CM. Weakness: still slow on the ball — must release quickly.",
     stats: { speed: 29, height: 50, strength: 45, power: 13, skill: 12, response: 50 },
     behaviour: { shoot: 40, pass: 100, dribble: 36, clear: 51, safe: 85, attacking: 15, marking: true, running: false }
   },
   {
-    id: "warrior", name: "Warrior", short: "Warrior", category: "super",
+    id: "warrior", name: "Warrior", realName: "Sierra", short: "Warrior", category: "super",
     type: "Super Protector", base: "Protector", tier: "S", accent: "#3B82F6",
     positions: ["CB", "CDM"],
     attributes: ["Maximum Tackling", "Strong Physicality", "Safe Passing"],
     strategy: "Defensive wall. Wins ground tackles cleanly and distributes simple, safe passes. An excellent midfield anchor.",
+    description: "A defensive wall that wins every ground tackle cleanly and distributes simple, safe passes. Excellent as a midfield anchor or centre-back. Ideal for possession-based teams. Weakness: contributes nothing offensively — purely defensive.",
     stats: { speed: 33, height: 27, strength: 38, power: 16, skill: 21, response: 43 },
     behaviour: { shoot: 80, pass: 100, dribble: 50, clear: 20, safe: 65, attacking: 35, marking: true, running: true }
   },
   {
-    id: "voyager", name: "Voyager", short: "Voyager", category: "super",
+    id: "voyager", name: "Voyager", realName: "Patrizio", short: "Voyager", category: "super",
     type: "Super Explorer", base: "Explorer", tier: "S", accent: "#F59E0B",
     positions: ["CB", "LB", "RB"],
     attributes: ["Pace", "Heavy Strength", "Safe Passing AI"],
     strategy: "Top-tier defender. Combines the speed of an Explorer with the physical dominance of a Guard. Won't lose the ball in dangerous areas.",
+    description: "The best all-around defender in the game. Combines the speed of an Explorer with the physical dominance of a Guard. Never loses the ball in dangerous areas. Ideal at centre-back or full-back. Weakness: no notable weakness — an elite pick in any defensive setup.",
     stats: { speed: 43, height: 38, strength: 27, power: 11, skill: 16, response: 43 },
     behaviour: { shoot: 46, pass: 91, dribble: 100, clear: 49, safe: 45, attacking: 55, marking: false, running: true }
   },
   {
-    id: "raider", name: "Raider", short: "Raider", category: "super",
+    id: "raider", name: "Raider", realName: "Keene", short: "Raider", category: "super",
     type: "Super Intruder", base: "Intruder", tier: "S", accent: "#22C55E",
     positions: ["CB", "LB", "RB"],
     attributes: ["High Speed", "High Tackling Response", "Defensive Awareness"],
     strategy: "Aggressive defender who dispossesses attackers quickly and immediately starts counter-attacks with accurate passes. Highest defensive awareness in the game.",
+    description: "An aggressive, fast defender who dispossesses attackers quickly and launches counter-attacks with accurate passes. Highest defensive awareness in the game. Best at CB or full-back. Weakness: sometimes too aggressive and leaves his position.",
     stats: { speed: 48, height: 43, strength: 32, power: 11, skill: 21, response: 38 },
     behaviour: { shoot: 46, pass: 91, dribble: 100, clear: 49, safe: 45, attacking: 55, marking: false, running: true }
   },
   {
-    id: "hero", name: "Hero", short: "Hero", category: "super",
+    id: "hero", name: "Hero", realName: "Jones", short: "Hero", category: "super",
     type: "Super Engine", base: "Engine", tier: "A", accent: "#22C55E",
     positions: ["CM", "LB", "RB"],
     attributes: ["High Stamina", "Balanced Technical Stats", "Versatility"],
     strategy: "Controls the tempo of the game, making critical box-to-box runs for 90 full minutes. Versatile enough to fill multiple positions.",
+    description: "A versatile Super Engine who controls the tempo of the entire match. Makes critical box-to-box runs for 90 minutes. Best in central midfield or wing-back. Weakness: like the base Engine, doesn't excel in any one stat — but has no glaring weakness either.",
     stats: { speed: 33, height: 32, strength: 32, power: 32, skill: 32, response: 43 },
     behaviour: { shoot: 100, pass: 63, dribble: 55, clear: 10, safe: 25, attacking: 75, marking: false, running: true }
   },
   {
-    id: "judge", name: "Judge", short: "Judge", category: "super",
+    id: "judge", name: "Judge", realName: "Johnson", short: "Judge", category: "super",
     type: "Super Guard", base: "Guard", tier: "A", accent: "#3B82F6",
     positions: ["CM", "CAM"],
     attributes: ["Smart Positioning", "High Response", "Safe Distribution"],
     strategy: "Stabilises the central area by intercepting passes and keeping ball movement fluid and safe.",
+    description: "A Super Guard who stabilises the central area by intercepting passes and keeping ball movement fluid. Best at CM or CAM for controlling play. Weakness: minimal attacking threat — use only as a link-up player.",
     stats: { speed: 33, height: 32, strength: 32, power: 32, skill: 32, response: 43 },
     behaviour: { shoot: 100, pass: 73, dribble: 46, clear: 10, safe: 35, attacking: 65, marking: false, running: false }
   },
   {
-    id: "wizard", name: "Wizard", short: "Wizard", category: "super",
+    id: "wizard", name: "Wizard", realName: "Zimmer", short: "Wizard", category: "super",
     type: "Super Architect", base: "Architect", tier: "S", accent: "#3B82F6",
     positions: ["CAM", "LW", "RW"],
     attributes: ["Elite Playmaking AI", "Maximum Curve Skill", "Pass Behaviour 100/100"],
     strategy: "Unlocks tight defensive setups with bending passes that bypass whole backlines. The best distributor in the game.",
+    description: "The best distributor in the game with 100/100 passing behaviour. Unlocks tight defences with curved passes that bypass whole backlines. Ideal at CAM or on the wing. Weakness: poor physicality — protect him from aggressive pressing.",
     stats: { speed: 34, height: 22, strength: 22, power: 16, skill: 50, response: 28 },
     behaviour: { shoot: 21, pass: 100, dribble: 33, clear: 20, safe: 30, attacking: 70, marking: false, running: false }
   },
   {
-    id: "composer", name: "Composer", short: "Composer", category: "super",
+    id: "composer", name: "Composer", realName: "Zivkovic", short: "Composer", category: "super",
     type: "Ultimate Wing Passer", base: "Architect", tier: "S", accent: "#3B82F6",
     positions: ["LM", "RM", "LB", "RB"],
     attributes: ["Max Curve", "Long Range Precision Passing", "Highest Passing Range"],
     strategy: "Can ping long-range diagonal passes across the entire field directly onto your striker's head. Highest passing range in the game.",
+    description: "The ultimate wing passer with the highest passing range in the game. Can ping long diagonal balls across the entire field directly to your striker's head. Best at LM, RM, LB, or RB. Weakness: slow and weak — keep him wide and let him deliver.",
     stats: { speed: 34, height: 17, strength: 28, power: 43, skill: 50, response: 23 },
     behaviour: { shoot: 21, pass: 100, dribble: 33, clear: 20, safe: 30, attacking: 70, marking: false, running: false }
   },
   {
-    id: "marksman", name: "Marksman", short: "Marksman", category: "super",
+    id: "marksman", name: "Marksman", realName: "Faustinho", short: "Marksman", category: "super",
     type: "Super Producer", base: "Producer", tier: "S", accent: "#F59E0B",
     positions: ["LM", "RM", "CAM", "ST"],
     attributes: ["Enhanced Shooting", "Enhanced Passing", "Curve"],
     strategy: "Retains the Producer's shooting excellence with enhanced attributes, making him even more deadly from difficult angles. More accurate than the base Producer.",
+    description: "An upgraded Producer with enhanced shooting and passing. Retains the base Producer's deadly accuracy from impossible angles and adds extra power. Best at LM, RM, CAM, or ST. Weakness: still poor dribbling — same as base Producer.",
     stats: { speed: 33, height: 27, strength: 32, power: 32, skill: 43, response: 27 },
     behaviour: { shoot: 40, pass: 100, dribble: 36, clear: 51, safe: 85, attacking: 15, marking: true, running: false }
   },
   {
-    id: "invader", name: "Invader", short: "Invader", category: "super",
+    id: "invader", name: "Invader", realName: "Bertini", short: "Invader", category: "super",
     type: "Super Infiltrator", base: "Infiltrator", tier: "S", accent: "#A855F7",
     positions: ["LW", "RW", "ST"],
     attributes: ["Speed", "High Response", "Controlled Dribbling"],
     strategy: "Drives directly into the penalty area with speed while retaining the intelligence to pass or shoot at the optimal moment.",
+    description: "A Super Infiltrator who drives directly into the penalty area with speed while retaining the intelligence to pass or shoot. Best on the wing or at striker. Weakness: can still over-dribble occasionally — give him clear paths.",
     stats: { speed: 48, height: 32, strength: 27, power: 11, skill: 21, response: 38 },
     behaviour: { shoot: 46, pass: 91, dribble: 100, clear: 49, safe: 45, attacking: 55, marking: false, running: true }
   },
   {
-    id: "gatecrasher", name: "Gatecrasher", short: "Gatecrasher", category: "super",
+    id: "gatecrasher", name: "Gatecrasher", realName: "Hakan", short: "Gatecrasher", category: "super",
     type: "Super Infiltrator", base: "Infiltrator", tier: "S", accent: "#A855F7",
     positions: ["ST", "LW", "RW"],
     attributes: ["Channel Running Speed", "Agility", "Exceptional Finishing"],
     strategy: "Exploits the narrow gaps between opponent Centre Backs to receive direct line-breaking passes. Pace is even higher than the Infiltrator's.",
+    description: "A Super Infiltrator who exploits the narrow gaps between centre-backs to receive direct line-breaking passes. Even faster than the base Infiltrator. Best at striker or on the wing. Weakness: needs perfect through-balls — a poor pass wastes his pace.",
     stats: { speed: 43, height: 27, strength: 21, power: 21, skill: 27, response: 27 },
     behaviour: { shoot: 46, pass: 91, dribble: 100, clear: 49, safe: 45, attacking: 55, marking: false, running: true }
   },
   {
-    id: "hitman", name: "Hitman", short: "Hitman", category: "super",
+    id: "hitman", name: "Hitman", realName: "Sinclair", short: "Hitman", category: "super",
     type: "Super Producer", base: "Producer", tier: "S", accent: "#F59E0B",
     positions: ["ST", "CAM"],
     attributes: ["Smart Tactical Positioning", "Space Identification", "Shooting 100/100"],
     strategy: "Makes intelligent off-the-ball runs into blind spots of the opponent's defence. Shooting behaviour is rated 100/100 — scores from any angle.",
+    description: "The best off-the-ball runner in the game with 100/100 shooting behaviour. Makes intelligent runs into blind spots and scores from any angle. Best at striker or CAM. Weakness: needs perfect service — a poor pass wastes his movement.",
     stats: { speed: 38, height: 32, strength: 21, power: 27, skill: 43, response: 22 },
     behaviour: { shoot: 46, pass: 91, dribble: 100, clear: 49, safe: 45, attacking: 55, marking: false, running: true }
   },
   {
-    id: "villain", name: "Villain", short: "Villain", category: "super",
+    id: "villain", name: "Villain", realName: "Fernandez", short: "Villain", category: "super",
     type: "Super Infiltrator", base: "Infiltrator", tier: "A", accent: "#A855F7",
     positions: ["ST", "CDM"],
     attributes: ["High Agility", "Curved Finishing", "High Aggression"],
     strategy: "Feints goalkeepers and bends shots into the far corner with extreme finesse. Aggression can be a double-edged sword.",
+    description: "A trick finisher who feints goalkeepers and bends shots into the far corner with extreme finesse. Best at striker or CDM. Weakness: aggressive style causes him to give away fouls — use him carefully in high-stakes matches.",
     stats: { speed: 33, height: 32, strength: 32, power: 32, skill: 32, response: 43 },
     behaviour: { shoot: 46, pass: 91, dribble: 100, clear: 49, safe: 45, attacking: 55, marking: false, running: true }
   },
   {
-    id: "jet", name: "Jet", short: "Jet", category: "special",
+    id: "jet", name: "Jet", realName: "Sabré", short: "Jet", category: "special",
     type: "Super Speedster", base: "Speedster", tier: "S", accent: "#EF4444",
     positions: ["ST", "LW", "RW"],
     attributes: ["Max Speed", "High Response", "Lethal Finishing"],
     strategy: "Superior to the standard Speedster because his high response allows him to beat defenders to through-balls and finish accurately. The highest pace in the game.",
+    description: "The fastest player in the entire game. His high response lets him beat defenders to through-balls and finish accurately. Deadly on counter-attacks. Best at striker or winger. Weakness: still has below-average passing — a pure finisher.",
     stats: { speed: 50, height: 22, strength: 28, power: 16, skill: 27, response: 27 },
     behaviour: { shoot: 91, pass: 32, dribble: 100, clear: 7, safe: 5, attacking: 95, marking: false, running: true }
   },
   {
-    id: "lightning", name: "Lightning", short: "Lightning", category: "special",
+    id: "lightning", name: "Lightning", realName: "Abubakar", short: "Lightning", category: "special",
     type: "Instant Acceleration Specialist", base: "Speedster", tier: "S", accent: "#EF4444",
     positions: ["ST", "LW", "RW"],
     attributes: ["Instant Top Speed Burst", "Improved Shooting"],
     strategy: "Reaches maximum speed within the first second of receiving a pass, ideal for quick breakaways. Shooting is more reliable than the Speedster's.",
+    description: "Reaches maximum speed within the first second of receiving a pass — the ultimate breakaway specialist. More reliable shooting than the base Speedster. Best at striker or winger. Weakness: low physicality — easily pushed off the ball.",
     stats: { speed: 50, height: 44, strength: 22, power: 22, skill: 16, response: 22 },
     behaviour: { shoot: 91, pass: 32, dribble: 100, clear: 7, safe: 5, attacking: 95, marking: false, running: true }
   },
   {
-    id: "poacher", name: "Poacher", short: "Poacher", category: "special",
+    id: "poacher", name: "Poacher", realName: "Sandberg", short: "Poacher", category: "special",
     type: "Super Prowler", base: "Prowler", tier: "S", accent: "#F59E0B",
     positions: ["ST", "CAM"],
     attributes: ["Extreme Acceleration", "Unmatched Response Time"],
     strategy: "Breaks offside traps with ease. Gains immediate possession off deflections and finishes with first-time shots. Near-post preference is even stronger.",
+    description: "The ultimate box poacher with unmatched response time. Breaks offside traps easily, gains possession off deflections, and finishes first-time. Best at striker or CAM. Weakness: minimal contribution outside the box — purely a finisher.",
     stats: { speed: 39, height: 22, strength: 28, power: 32, skill: 27, response: 50 },
     behaviour: { shoot: 78, pass: 21, dribble: 100, clear: 7, safe: 5, attacking: 95, marking: false, running: true }
   },
   {
-    id: "bulldozer", name: "Bulldozer", short: "Bulldozer", category: "special",
+    id: "bulldozer", name: "Bulldozer", realName: "Matsumoto", short: "Bulldozer", category: "special",
     type: "Super Hammer", base: "Hammer", tier: "S", accent: "#A855F7",
     positions: ["ST", "CM"],
     attributes: ["Extreme Strength", "Height", "Dribble Power"],
     strategy: "The ultimate target man. Bullies defenders with physical force, wins every corner kick header, and possesses devastating shooting power.",
+    description: "The ultimate target man who bullies defenders with physical force. Wins every corner header and possesses devastating shooting power. Best at striker or central midfield. Weakness: extremely slow — must be fed with crosses and through-balls.",
     stats: { speed: 27, height: 43, strength: 48, power: 43, skill: 11, response: 27 },
     behaviour: { shoot: 100, pass: 73, dribble: 44, clear: 9, safe: 70, attacking: 30, marking: true, running: true }
   },
   {
-    id: "thunder", name: "Thunder", short: "Thunder", category: "special",
+    id: "thunder", name: "Thunder", realName: "Junior", short: "Thunder", category: "special",
     type: "Moving Aerial Striker", base: "Hammer", tier: "S", accent: "#F59E0B",
     positions: ["ST"],
     attributes: ["Running Header Power", "Jumping Reach", "Highest Power"],
     strategy: "Attacks incoming crosses on the run, driving powerful headers past the keeper while in motion. Power is the highest in the game.",
+    description: "The best aerial striker in the game. Attacks crosses on the run and drives powerful headers past the keeper while in motion. Highest power in the game. Best at striker. Weakness: only effective from crosses — useless with ground passes.",
     stats: { speed: 27, height: 43, strength: 48, power: 43, skill: 11, response: 22 },
     behaviour: { shoot: 46, pass: 91, dribble: 100, clear: 49, safe: 45, attacking: 55, marking: false, running: true }
   },
   {
-    id: "juggernaut", name: "Juggernaut", short: "Juggernaut", category: "special",
+    id: "juggernaut", name: "Juggernaut", realName: "Cook", short: "Juggernaut", category: "special",
     type: "Heavy Tank Attacker", base: "", tier: "A", accent: "#A855F7",
     positions: ["ST"],
     attributes: ["Maximum Physical Body Strength"],
     strategy: "Absorbs tackles from defenders without losing balance or momentum while driving toward goal.",
+    description: "A heavy tank attacker who absorbs tackles without losing balance or momentum. Nearly impossible to knock off the ball. Best at striker. Weakness: low skill and response — can't turn quickly or link up play.",
     stats: { speed: 48, height: 43, strength: 48, power: 11, skill: 11, response: 11 },
     behaviour: { shoot: 100, pass: 73, dribble: 44, clear: 9, safe: 70, attacking: 30, marking: true, running: true }
   },
   {
-    id: "cannon", name: "Cannon", short: "Cannon", category: "special",
+    id: "cannon", name: "Cannon", realName: "Benitez", short: "Cannon", category: "special",
     type: "Long Range Shooter", base: "", tier: "A", accent: "#EF4444",
     positions: ["CAM", "ST"],
     attributes: ["Extreme Outer Box Shot Power"],
     strategy: "Capable of scoring long-range goals from well outside the penalty box without needing to enter the box.",
+    description: "A long-range shooting specialist who scores from well outside the penalty box. Best at CAM or striker for shots from distance. Weakness: terrible speed and skill — only use him when he has a clear shooting angle.",
     stats: { speed: 11, height: 11, strength: 48, power: 48, skill: 11, response: 11 },
     behaviour: { shoot: 100, pass: 73, dribble: 46, clear: 10, safe: 35, attacking: 65, marking: false, running: false }
   },
   {
-    id: "finisher", name: "Finisher", short: "Finisher", category: "special",
+    id: "finisher", name: "Finisher", realName: "Traore", short: "Finisher", category: "special",
     type: "Low Cross & Driven Shot Specialist", base: "", tier: "A", accent: "#22C55E",
     positions: ["LW", "RW", "ST"],
     attributes: ["Driven Ground Crosses", "Powerful Low Finishing"],
     strategy: "Fires low, hard-driven crosses across the face of the goal for easy tap-ins, or finishes low into the corners.",
+    description: "A specialist in low crosses and driven shots. Fires hard, low crosses for easy tap-ins or finishes low into the corners. Best on the wing or at striker. Weakness: low speed and physicality — needs good service.",
     stats: { speed: 11, height: 11, strength: 11, power: 48, skill: 48, response: 11 },
     behaviour: { shoot: 46, pass: 91, dribble: 100, clear: 49, safe: 45, attacking: 55, marking: false, running: true }
   },
   {
-    id: "maestro", name: "Maestro", short: "Maestro", category: "special",
+    id: "maestro", name: "Maestro", realName: "Lee", short: "Maestro", category: "special",
     type: "Possession Master", base: "", tier: "A", accent: "#3B82F6",
     positions: ["CM", "CAM"],
     attributes: ["Ultra-Safe Ball Retention", "Passing Accuracy"],
     strategy: "Dictates play and ensures your team never loses possession in the build-up phase.",
+    description: "The ultimate possession master with ultra-safe ball retention. Dictates play and never loses possession during build-up. Best at CM or CAM. Weakness: minimal defensive contribution — purely a playmaker.",
     stats: { speed: 48, height: 11, strength: 11, power: 48, skill: 48, response: 11 },
     behaviour: { shoot: 21, pass: 100, dribble: 33, clear: 20, safe: 30, attacking: 70, marking: false, running: false }
   },
   {
-    id: "pickpocket", name: "Pickpocket", short: "Pickpocket", category: "special",
+    id: "pickpocket", name: "Pickpocket", realName: "Simon", short: "Pickpocket", category: "special",
     type: "Dispossession Specialist", base: "", tier: "A", accent: "#22C55E",
     positions: ["CM", "CDM"],
     attributes: ["Maximum Tackling Success Rate"],
     strategy: "Sneaks behind opponent ball-carriers to steal possession without conceding fouls.",
+    description: "A dispossession specialist who sneaks behind opponent ball-carriers to steal possession without conceding fouls. Highest tackling success rate. Best at CM or CDM. Weakness: slow and weak when in possession himself.",
     stats: { speed: 48, height: 11, strength: 48, power: 11, skill: 11, response: 48 },
     behaviour: { shoot: 100, pass: 73, dribble: 46, clear: 10, safe: 35, attacking: 65, marking: false, running: false }
   }
@@ -2233,6 +2282,7 @@ function playerMatchesSearch(p, q) {
   // Build a rich haystack including every meaningful field
   const hay = normalizeSearch([
     p.name,
+    p.realName || "",
     p.short,
     p.type,
     p.base,
@@ -2243,7 +2293,8 @@ function playerMatchesSearch(p, q) {
     p.category,
     p.positions.join(" "),
     p.attributes.join(" "),
-    p.strategy
+    p.strategy,
+    p.description || ""
   ].join(" "));
 
   // Split query into individual terms so "hammer striker" matches
@@ -2297,6 +2348,7 @@ function renderPlayers() {
         <div>
           <div class="pc-name">${escapeHtml(p.name)}</div>
           <div class="pc-type">${escapeHtml(p.type)}</div>
+          ${p.realName ? `<div class="pc-realname">aka ${escapeHtml(p.realName)}</div>` : ""}
         </div>
       </div>
       <div class="pc-positions">
@@ -2310,6 +2362,7 @@ function renderPlayers() {
         <div class="mini-stat"><div class="v">${p.stats.skill}</div><div class="l">SKL</div></div>
         <div class="mini-stat"><div class="v">${p.stats.response}</div><div class="l">RES</div></div>
       </div>
+      ${p.description ? `<div class="pc-desc">${escapeHtml(p.description)}</div>` : ""}
     </div>
   `).join("");
 
@@ -2377,9 +2430,17 @@ function openPlayerModal(id) {
       <div>
         <div class="modal-name">${escapeHtml(p.name)}</div>
         <div class="modal-type">${escapeHtml(p.type)}</div>
+        ${p.realName ? `<div class="modal-realname">Real Name: ${escapeHtml(p.realName)}</div>` : ""}
         <div class="modal-base">${p.base ? "Base Archetype: " + escapeHtml(p.base) + " • " : ""}${escapeHtml(categoryLabel(p.category))} • ${p.tier}-Tier</div>
       </div>
     </div>
+
+    ${p.description ? `
+    <div class="modal-section">
+      <h5>Overview</h5>
+      <div class="modal-description">${escapeHtml(p.description)}</div>
+    </div>
+    ` : ""}
 
     <div class="modal-section">
       <h5>Best Positions</h5>
@@ -2466,7 +2527,7 @@ const compareResult = document.getElementById("compareResult");
 const compareBtn = document.getElementById("compareBtn");
 
 function fillCompareSelects() {
-  const opts = PLAYERS.map(p => `<option value="${p.id}">${escapeHtml(p.name)} — ${escapeHtml(p.type)}</option>`).join("");
+  const opts = PLAYERS.map(p => `<option value="${p.id}">${escapeHtml(p.name)}${p.realName ? " (" + escapeHtml(p.realName) + ")" : ""} — ${escapeHtml(p.type)}</option>`).join("");
   compareA.innerHTML = opts;
   compareB.innerHTML = opts;
   compareA.value = "producer";
